@@ -15,7 +15,6 @@
   align-items: center;
   background-color: #dddad8;
   border: 2px dashed #bfbcba;
-  cursor: default;
   display: flex;
   flex: 1;
   justify-content: center;
@@ -25,6 +24,26 @@
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.CharacterEquipment .equipment--empty {
+  cursor: default;
+}
+
+.CharacterEquipment .equipment * {
+  width: 100%;
+  height: 100%;
+}
+
+.CharacterEquipment .equipment:hover {
+  background-color: #bce1b9;
+  border: 2px dashed #78aa6a;
+}
+
+.CharacterEquipment .equipment.equipment--empty:hover {
+  background-color: #dddad8;
+  border: 2px dashed #bfbcba;
 }
 
 .CharacterEquipment .equipment:nth-child(2) {

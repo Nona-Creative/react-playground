@@ -33,19 +33,22 @@ const ItemCompare = ({
 }) => (
   <div className="ItemCompare">
     <div className="row">
-      {equippedItems ? (
+      {R.length(equippedItems) > 0 ? (
         <div className="col">
           {R.addIndex(R.map)(attrList, equippedItems)}
         </div>
       ) : null}
-      <div className="col">
-        {attrList(inventoryItem, 0)}
-      </div>
+      {R.isNil(inventoryItem) ? null : (
+        <div className="col">
+          {attrList(inventoryItem, 0)}
+        </div>
+      )}
     </div>
   </div>
 )
 
 ItemCompare.defaultProps = {
+  inventoryItem: null,
   equippedItems: [],
 }
 

@@ -8,22 +8,11 @@ import itemsCharacterAttributes from './ItemsCharacterAttributes.json'
 // actions & action creators
 //---------------------------------
 
-export const SELECT_ITEM = 'app/Items/SELECT_ITEM'
-export const selectItem = ({ id }) => ({ type: SELECT_ITEM, payload: { id } })
-
 export const EQUIP_ITEM = 'app/Items/EQUIP_ITEM'
-export const EQUIP_ITEM_SUCCESS = 'app/Items/EQUIP_ITEM_SUCCESS'
-export const EQUIP_ITEM_FAILURE = 'app/Items/EQUIP_ITEM_FAILURE'
 export const equipItem = (characterId, itemId) => ({ type: EQUIP_ITEM, payload: { characterId, itemId } })
-export const equipItemSuccess = (id) => ({ type: EQUIP_ITEM_SUCCESS, payload: id })
-export const equipItemFailure = (id) => ({ type: EQUIP_ITEM_FAILURE, payload: id })
 
 export const UNEQUIP_ITEM = 'app/Items/UNEQUIP_ITEM'
-export const UNEQUIP_ITEM_SUCCESS = 'app/Items/UNEQUIP_ITEM_SUCCESS'
-export const UNEQUIP_ITEM_FAILURE = 'app/Items/UNEQUIP_ITEM_FAILURE'
-export const unequipItem = (id) => ({ type: UNEQUIP_ITEM, payload: id })
-export const unequipItemSuccess = (id) => ({ type: UNEQUIP_ITEM_SUCCESS, payload: id })
-export const unequipItemFailure = (id) => ({ type: UNEQUIP_ITEM_FAILURE, payload: id })
+export const unequipItem = (itemId) => ({ type: UNEQUIP_ITEM, payload: { itemId } })
 
 //---------------------------------
 // reducers
@@ -42,8 +31,16 @@ const associateItemWithCharacter = (state, action) => {
   ))(state)
 }
 
+const disassociateItemWithCharacter = (state, action) => {
+  const { itemId } = R.prop('payload', action)
+  return R.map(x => (
+    R.mergeDeepRight(x, x.id === itemId ? { characterId: null } : {})
+  ))(state)
+}
+
 const reducers = {
   [EQUIP_ITEM]: associateItemWithCharacter,
+  [UNEQUIP_ITEM]: disassociateItemWithCharacter,
 }
 
 export default endpoint(reducers, INITIAL_STATE)

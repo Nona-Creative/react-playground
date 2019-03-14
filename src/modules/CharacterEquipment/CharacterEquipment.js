@@ -1,18 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import * as R from 'ramda'
+import { Tooltip } from 'react-tippy'
 
 import './CharacterEquipment.scss'
+import ItemCompare from '../ItemCompare'
 
 const CharacterEquipment = ({
   characterEquipment,
   onSelect,
 }) => {
-  const item = x => (
-    <div className="equipment" onClick={() => onSelect(R.prop('id', x))}>
-      <span>{ x ? x.label : null }</span>
-    </div>
-  )
+  const item = x => R.isNil(x)
+    ? (
+      <div className="equipment equipment--empty">EMPTY</div>
+    )
+    : (
+      <div className="equipment" onClick={() => onSelect(R.prop('id', x))}>
+        <Tooltip animation="fade" arrow="true" theme="light" html={(
+          <div>
+            <div>click to unequip</div>
+            <ItemCompare inventoryItem={x} />
+          </div>
+        )}>
+          <div>
+            <span>{ x ? x.label : null }</span>
+          </div>
+        </Tooltip>
+      </div>
+    )
+
   return (
     <div className="CharacterEquipment">
       <div className="column">

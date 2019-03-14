@@ -20,14 +20,18 @@ const CharacterAttack = ({
   <div className="CharacterAttack">
     <div className="item-cell__max_damage"><strong>Max damage:</strong> {maxAttackDamage}</div>
     <br/>
-    <div className="item-cell__heading">{weapon.label}</div>
-    <div className="item-cell__subheading">{weapon.type}</div>
-    <div className="item-cell__attributes">{R.addIndex(R.map)(attrListItem, weapon.characterAttributeModifiers)}</div>
+    {R.isNil(weapon) ? null : (
+      <div>
+        <div className="item-cell__heading">{weapon.label}</div>
+        <div className="item-cell__subheading">{weapon.type}</div>
+        <div className="item-cell__attributes">{R.addIndex(R.map)(attrListItem, weapon.characterAttributeModifiers)}</div>
+      </div>
+    )}
   </div>
 )
 
 CharacterAttack.defaultProps = {
-  weapon: {},
+  weapon: null,
   maxAttackDamage: null,
 }
 
