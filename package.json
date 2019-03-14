@@ -7,11 +7,13 @@
     "help": "package-json-help.js",
     "start": "react-scripts start",
     "_build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --watchAll",
+    "test": "CI=true react-scripts test",
+    "test:coverage": "react-scripts test --coverage",
+    "test:watch": "react-scripts test --env=jsdom --watchAll",
     "lint:js": "eslint --ext .js --ignore-path .gitignore .",
     "_eject": "react-scripts eject",
     "_git:pre-commit": "npm-run-all lint:js",
-    "_git:pre-push": "npm-run-all lint:js test"
+    "_git:pre-push": "npm-run-all lint:js test:coverage"
   },
   "husky": {
     "hooks": {
