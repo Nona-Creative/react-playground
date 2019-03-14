@@ -47,8 +47,8 @@
   {
     "id": 6,
     "characterId": 1,
-    "name": "shield-1",
-    "label": "Shield 1",
+    "name": "heavy-shield-1",
+    "label": "Heavy Shield 1",
     "type": "shield"
   },
   {
@@ -203,7 +203,7 @@
     "id": 27,
     "characterId": 3,
     "name": "short-bow-1",
-    "label": "short Bow 1",
+    "label": "Short Bow 1",
     "type": "ranged-weapon",
     "typeLabel": "Ranged Weapon",
     "damage": 165
@@ -221,5 +221,12 @@
     "name": "sash-dexterity-1",
     "label": "Sash of Dexterity",
     "type": "accessory"
+  },
+  {
+    "id": 30,
+    "characterId": null,
+    "name": "light-shield-1",
+    "label": "Light Shield 1",
+    "type": "shield"
   }
 ]
