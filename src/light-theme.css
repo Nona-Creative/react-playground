@@ -36,32 +36,20 @@ body {
 
 .list-item a, .list-item .link {
   color: #3c84a6;
-  /*border-bottom: 1px solid #3c84a6;*/
-  border-bottom: 1px solid transparent;
-  /*width: calc(60% - 20px);*/
-  /*margin-left: 20%;*/
-  transition: border-color .5s, color .5s;
-  /*transition: border-color .5s, color .5s, width .8s, margin .8s;*/
+  transition: color .5s;
   padding: 10px;
 }
 
 .list-item a:hover, .list-item .link:hover {
-  border-color: #7dabc9;
   color: #204457;
-  /*width: calc(90% - 20px);*/
-  /*margin-left: 5%;*/
-  transition: border-color .5s, color .2s;
-  /*transition: border-color .5s, color .2s, width .5s, margin .5s;*/
+  transition: color .2s;
 }
 
 .list-item--selected a, .list-item--selected .link,
 .list-item--selected a:hover, .list-item--selected .link:hover {
   border-color: #193645;
   color: #193645;
-  /*width: calc(110% - 20px);*/
-  /*margin-left: -5%;*/
-  transition: border-color .2s, color .2s;
-  /*transition: border-color .2s, color .2s, width 1.6s, margin 1.6s;*/
+  transition: color .2s;
   cursor: default;
 }
 

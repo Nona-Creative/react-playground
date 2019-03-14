@@ -1,11 +1,20 @@
-.Characters .list li {
+.Characters .list .list-item {
   height: 80px;
   overflow: hidden;
-  border: 1px solid #bfbcba;
+  border: 2px dashed #bfbcba;
   margin-bottom: 5px;
 }
-.Characters .list li:hover {
-  background-color: #dddad8;
+.Characters .list .list-item:hover {
+  background-color: #bce1b9;
+  border: 2px dashed #78aa6a;
+}
+.Characters .list .list-item--selected {
+  background-color: #badded;
+  border: 2px dashed #50a4bd;
+}
+.Characters .list .list-item--selected:hover {
+  background-color: #badded;
+  border: 2px dashed #50a4bd;
 }
 
 .Characters .link:hover {

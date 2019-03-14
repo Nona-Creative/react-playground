@@ -1,15 +1,18 @@
 .item {
-  width: 100px;
-  height: 100px;
   float: left;
-  padding:20px;
+  padding: 10px;
   background-color: #dddad8;
   border: 2px dashed #bfbcba;
   margin: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: help;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #bce1b9;
+  border: 2px dashed #78aa6a;
 }
 
 .itemItem {
@@ -17,4 +20,6 @@
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
+  width: 80px;
+  height: 100px;
 }

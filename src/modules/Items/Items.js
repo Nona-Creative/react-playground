@@ -23,10 +23,13 @@ const Items = ({
   const listItem = (x, i) => (
     <li className="item" key={i}>
       <Tooltip animation="fade" arrow="true" theme="light" html={(
-        <ItemCompare
-          inventoryItem={x}
-          equippedItems={extractMatchingEquippedItems(characterEquipment)(x)}
-        />
+        <div>
+          <div>click to equip</div>
+          <ItemCompare
+            inventoryItem={x}
+            equippedItems={extractMatchingEquippedItems(characterEquipment)(x)}
+          />
+        </div>
       )}>
         <div
           className="itemItem"

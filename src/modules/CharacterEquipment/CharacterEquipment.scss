@@ -19,7 +19,7 @@
   display: flex;
   flex: 1;
   justify-content: center;
-  margin:0;
+  margin: 0;
   padding: 10px;
   text-align: center;
   text-transform: uppercase;
@@ -29,4 +29,25 @@
 
 .CharacterEquipment .equipment:nth-child(2) {
   margin-top: 10px;
+}
+
+.CharacterEquipment .column:nth-child(1),
+.CharacterEquipment .column:nth-child(3) {
+  width: 90px;
+}
+.CharacterEquipment .column:nth-child(2) {
+  width: 110px;
+}
+
+.CharacterEquipment .column:nth-child(1) .equipment:nth-child(1),
+.CharacterEquipment .column:nth-child(3) .equipment:nth-child(1) {
+  margin-top: 20px;
+  max-height: 140px;
+}
+
+.CharacterEquipment .column:nth-child(1) .equipment:nth-child(2),
+.CharacterEquipment .column:nth-child(3) .equipment:nth-child(2) {
+  max-height: 60px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }

@@ -1,14 +1,14 @@
 .SelectedCharacter__header {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .SelectedCharacter__header {
   h1 {
-    margin-bottom: 0;
+    margin: 0;
   }
   h2 {
-    margin:0;
+    margin: 0;
   }
 }
 
@@ -41,10 +41,11 @@
 }
 
 .SelectedCharacter__portrait {
-  height: 100%;
+  height: 320px;
+  min-width: 190px;
   width: 100%;
   display: flex;
-  margin-left:5px;
+  margin-left: 5px;
 }
 
 .SelectedCharacter__portrait img {
@@ -52,11 +53,12 @@
   align-self: stretch;
   justify-self: stretch;
   object-fit: cover;
+  width: 100%;
 }
 
 .item-cell__heading {
   font-size: 18px;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 .item-cell__subheading {
