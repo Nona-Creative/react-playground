@@ -35,6 +35,8 @@ rules:
   comma-dangle:
     - error
     - always-multiline
+  no-underscore-dangle:
+    - off
   react/jsx-filename-extension:
     - 1
     - extensions:
