@@ -18,8 +18,8 @@ const selector = createSelector(
     const selectedCharacterId = R.prop('id', selectedCharacter)
     const weaponEquippedByCharacter = R.pipe(
       R.groupBy(R.prop('characterId')),
-      R.prop(selectedCharacterId),
-      R.filter(x => R.includes(R.prop('type', x), equipmentSlotItemTypes.weapons)),
+      R.propOr([], selectedCharacterId),
+      R.filter(x => R.includes(R.prop('type', x), R.prop('weapons', equipmentSlotItemTypes))),
       R.propOr(null, 0),
     )(items)
 

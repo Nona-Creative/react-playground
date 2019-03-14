@@ -25,3 +25,9 @@ export const weaponTypesCharacterAbility = {
   [itemTypes.WEAPON_RANGED]: 2,
   [itemTypes.WEAPON_MAGICAL]: null,
 }
+
+export const armourTypesCharacterAbility = {
+  [itemTypes.ARMOUR_HEAVY]: 1,
+  [itemTypes.ARMOUR_LIGHT]: 2,
+  [itemTypes.ARMOUR_MAGICAL]: null,
+}

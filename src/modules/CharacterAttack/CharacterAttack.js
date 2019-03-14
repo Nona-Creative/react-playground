@@ -5,7 +5,7 @@ import * as R from 'ramda'
 import './CharacterAttack.scss'
 
 const attrListItem = (x, i) => (
-  <div key={i}>
+  <div key={i} className="small">
     {x.operator === 'add'
       ? <span className="green">{x.label}</span>
       : <span className="red">{x.label}</span>
@@ -18,10 +18,11 @@ const CharacterAttack = ({
   maxAttackDamage,
 }) => (
   <div className="CharacterAttack">
+    <div className="item-cell__max_damage"><strong>Max damage:</strong> {maxAttackDamage}</div>
+    <br/>
     <div className="item-cell__heading">{weapon.label}</div>
     <div className="item-cell__subheading">{weapon.type}</div>
     <div className="item-cell__attributes">{R.addIndex(R.map)(attrListItem, weapon.characterAttributeModifiers)}</div>
-    <div className="item-cell__max_damage"><strong>Max damage:</strong> {maxAttackDamage}</div>
   </div>
 )
 

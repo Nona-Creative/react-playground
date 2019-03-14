@@ -5,7 +5,7 @@ import * as R from 'ramda'
 import './ItemCompare.scss'
 
 const attrListItem = (x, i) => (
-  <div key={i}>
+  <div key={i} className="small">
     {x.operator === 'add'
       ? <span className="green">{x.label}</span>
       : <span className="red">{x.label}</span>

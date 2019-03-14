@@ -5,4 +5,7 @@ export const itemTypes = {
   SHIELD: 'shield',
   ACCESSORY: 'accessory',
   ATTIRE: 'attire',
+  ARMOUR_HEAVY: 'armour-heavy',
+  ARMOUR_LIGHT: 'armour-light',
+  ARMOUR_MAGICAL: 'armour-magical',
 }

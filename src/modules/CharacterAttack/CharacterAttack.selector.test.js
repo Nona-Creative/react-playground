@@ -4,20 +4,20 @@ import parametrize from 'js-parametrize'
 import SUT from './CharacterAttack.selector'
 
 describe('CharacterAttack selector', () => {
-  describe('CharacterAttack', () => {
+  describe('weapon, maxAttackDamage', () => {
     parametrize([
       ['melee-weapon', 200, 295],
       ['ranged-weapon', 200, 265],
       ['magical-weapon', 200, 200],
-    ], (weaponType, weaponDamage, expected) => {
-      it('should select character attributes as expected', () => {
+    ], (weaponType, weaponDamage, expectedMaxAttackDamage) => {
+      it('should select character weapon and max attack damage as expected', () => {
         // given
         // ... selected character:
         // ... - is level 10 barbarian
         // ... - has strength attribute of 14
         // ... - has dexterity attribute of 8
         // ... and is provided as a prop
-        // ... and character attributes (including strength) are in state
+        // ... and character attributes (including strength & dexterity) are in state
         // ... and selected character has provided weapon equipped
         const props = {
           selectedCharacter: {
@@ -84,7 +84,7 @@ describe('CharacterAttack selector', () => {
           type: weaponType,
           damage: weaponDamage,
         })
-        assert.strictEqual(result.maxAttackDamage, expected)
+        assert.strictEqual(result.maxAttackDamage, expectedMaxAttackDamage)
       })
     })
   })

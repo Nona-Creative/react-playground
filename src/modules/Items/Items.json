@@ -49,42 +49,54 @@
     "characterId": 1,
     "name": "heavy-shield-1",
     "label": "Heavy Shield 1",
-    "type": "shield"
+    "type": "shield",
+    "armourType": "armour-heavy",
+    "armour": 70
   },
   {
     "id": 7,
     "characterId": null,
     "name": "heavy-armour-1",
     "label": "Heavy Armour 1",
-    "type": "attire"
+    "type": "attire",
+    "armourType": "armour-heavy",
+    "armour": 170
   },
   {
     "id": 8,
     "characterId": 1,
     "name": "heavy-armour-2",
     "label": "Heavy Armour 2",
-    "type": "attire"
+    "type": "attire",
+    "armourType": "armour-heavy",
+    "armour": 195
   },
   {
     "id": 9,
     "characterId": null,
     "name": "light-armour-1",
     "label": "Light Armour 1",
-    "type": "attire"
+    "type": "attire",
+    "armourType": "armour-light",
+    "armour": 120
   },
   {
     "id": 10,
     "characterId": 3,
     "name": "tunic-1",
     "label": "Tunic 1",
-    "type": "attire"
+    "type": "attire",
+    "armourType": "armour-light",
+    "armour": 90
   },
   {
     "id": 11,
     "characterId": 2,
     "name": "robe-1",
     "label": "Robe 1",
-    "type": "attire"
+    "type": "attire",
+    "armourType": "armour-magical",
+    "armour": 20
   },
   {
     "id": 12,
@@ -227,6 +239,8 @@
     "characterId": null,
     "name": "light-shield-1",
     "label": "Light Shield 1",
-    "type": "shield"
+    "type": "shield",
+    "armourType": "armour-light",
+    "armour": 30
   }
 ]
