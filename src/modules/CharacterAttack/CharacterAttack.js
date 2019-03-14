@@ -21,7 +21,7 @@ const CharacterAttack = ({
     <div className="item-cell__heading">{weapon.label}</div>
     <div className="item-cell__subheading">{weapon.type}</div>
     <div className="item-cell__attributes">{R.addIndex(R.map)(attrListItem, weapon.characterAttributeModifiers)}</div>
-    <div>max damage: {maxAttackDamage}</div>
+    <div className="item-cell__max_damage"><strong>Max damage:</strong> {maxAttackDamage}</div>
   </div>
 )
 

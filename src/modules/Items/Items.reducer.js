@@ -1,7 +1,8 @@
+import * as R from 'ramda'
+
 import { endpoint } from '../../common/redux/redux.utils'
 import items from './Items.json'
 import itemsCharacterAttributes from './ItemsCharacterAttributes.json'
-import * as R from 'ramda'
 
 //---------------------------------
 // actions & action creators

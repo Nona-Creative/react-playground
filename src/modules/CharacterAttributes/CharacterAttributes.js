@@ -31,8 +31,8 @@ const CharacterAttributes = ({
   const listItem = (x, i) => (
     <li className="list-item" key={i}>
       <div className="row">
-        <div className="col left">{x.label}</div>
-        <div className="col left">{listItemValue(x)}</div>
+        <div className="col left label">{x.label}</div>
+        <div className="col left value">{listItemValue(x)}</div>
       </div>
     </li>
   )

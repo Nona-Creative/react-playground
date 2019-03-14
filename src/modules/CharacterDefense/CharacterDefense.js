@@ -21,7 +21,7 @@ const CharacterDefense = ({
     <div className="item-cell__heading">{armour.label}</div>
     <div className="item-cell__subheading">{armour.type}</div>
     <div className="item-cell__attributes">{R.addIndex(R.map)(attrListItem, armour.characterAttributeModifiers)}</div>
-    <div>armour class: {armourClass}</div>
+    <div className="item-cell__max_damage"><strong>Armour class:</strong> {armourClass}</div>
   </div>
 )
 

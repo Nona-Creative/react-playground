@@ -13,28 +13,35 @@ const SelectedCharacter = ({
 }) => selectedCharacter ? (
   <div className="SelectedCharacter">
     <div className="SelectedCharacter__header">
-      <div>{selectedCharacter.label}</div>
-      <div>LEVEL {selectedCharacter.level}</div>
-      <div>{selectedCharacter.class}</div>
+      <h1>{selectedCharacter.label}</h1>
+      <h2>LEVEL {selectedCharacter.level}</h2>
+      <h2>{selectedCharacter.class}</h2>
     </div>
-
     <div className="SelectedCharacter__main row">
       <div className="col left">
         <div className="SelectedCharacter__portrait character-portrait">
           <img src="http://www.thain.org/forum/e107_files/public/118_caspian.jpg" />
         </div>
+      </div>
+      <div className="col left">
+        <CharacterEquipment />
+      </div>
+    </div>
+    <div className="SelectedCharacter__meta row">
+      <div className="col left">
         <CharacterAttributes
           selectedCharacterAttributes={selectedCharacter.attributes}
         />
       </div>
       <div className="col left">
-        <CharacterEquipment />
         <CharacterHP selectedCharacter={selectedCharacter} />
         <div className="row">
           <div className="col">
+            <h3>Attack</h3>
             <CharacterAttack selectedCharacter={selectedCharacter} />
           </div>
           <div className="col">
+            <h3>Defence</h3>
             <CharacterDefense selectedCharacter={selectedCharacter} />
           </div>
         </div>
