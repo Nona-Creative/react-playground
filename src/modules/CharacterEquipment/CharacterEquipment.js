@@ -9,20 +9,20 @@ const CharacterEquipment = ({
   onSelect,
 }) => {
   const item = x => (
-    <div onClick={() => onSelect(R.prop('id', x))}>
+    <div className="equipment" onClick={() => onSelect(R.prop('id', x))}>
       <span>{ x ? x.label : null }</span>
     </div>
   )
   return (
     <div className="CharacterEquipment">
-      <div>
+      <div className="column">
         {item(characterEquipment.weapon)}
         {item(characterEquipment.accessory1)}
       </div>
-      <div>
+      <div className="column">
         {item(characterEquipment.attire)}
       </div>
-      <div>
+      <div className="column">
         {item(characterEquipment.shield)}
         {item(characterEquipment.accessory2)}
       </div>

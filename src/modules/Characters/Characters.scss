@@ -1,10 +1,20 @@
 .Characters .list li {
   height: 80px;
+  overflow: hidden;
+  border: 1px solid #bfbcba;
+  margin-bottom: 5px;
+}
+.Characters .list li:hover {
+  background-color: #dddad8;
+}
+
+.Characters .link:hover {
+  text-decoration: none;
 }
 
 .Character__portrait-small {
   float: left;
-  width: 80px;
+  width: 60px;
   height: 60px;
   margin-right: 10px;
 }
@@ -12,4 +22,8 @@
 .Character__portrait-small > img {
   width: 100%;
   margin: -25% 0;
+}
+
+.Character__label {
+  font-size: 16px;
 }

@@ -1,34 +1,32 @@
 .CharacterEquipment {
   display: flex;
-  height: calc(280px + 1vmin);
-  justify-content: space-between;
+  height: 100%;
   margin-bottom: 20px;
 }
 
-.CharacterEquipment > div:nth-child(1),
-.CharacterEquipment > div:nth-child(3) {
-  width: 24%;
-}
-.CharacterEquipment > div:nth-child(2) {
-  width: 32%;
-}
-
-.CharacterEquipment > div > div {
-  width: 100%;
+.CharacterEquipment .column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 5px;
 }
 
-.CharacterEquipment > div:nth-child(1) > div:nth-child(1),
-.CharacterEquipment > div:nth-child(3) > div:nth-child(1) {
-  height: calc(65% - 20px);
+.CharacterEquipment .equipment {
+  align-items: center;
+  background-color: #dddad8;
+  border: 2px dashed #bfbcba;
+  cursor: default;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin:0;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.CharacterEquipment > div:nth-child(1) > div:nth-child(2),
-.CharacterEquipment > div:nth-child(3) > div:nth-child(2) {
-  height: calc(30% - 20px);
-  margin-top: 20px;
-}
-
-.CharacterEquipment > div:nth-child(2) > div {
-  height: calc(100% - 40px);
-  margin-top: 40px;
+.CharacterEquipment .equipment:nth-child(2) {
+  margin-top: 10px;
 }

@@ -15,7 +15,7 @@ const Characters = ({
         <div className="Character__portrait-small character-portrait">
           <img src="http://www.thain.org/forum/e107_files/public/118_caspian.jpg" />
         </div>
-        <div>{x.label}</div>
+        <div className="Character__label">{x.label}</div>
       </div>
     </li>
   )

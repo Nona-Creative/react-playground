@@ -7,13 +7,13 @@ import SelectedCharacter from '../SelectedCharacter'
 
 const Inventory = () => (
   <main className="Inventory__main row">
-    <div className="col">
+    <div className="col charactersWrap">
       <Characters />
     </div>
-    <div className="col">
+    <div className="col selectedCharacterWrap">
       <SelectedCharacter />
     </div>
-    <div className="col">
+    <div className="col itemsWrap">
       <Items />
     </div>
   </main>

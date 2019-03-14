@@ -21,7 +21,7 @@ const Items = ({
   onSelect,
 }) => {
   const listItem = (x, i) => (
-    <li className="Item" key={i}>
+    <li className="item" key={i}>
       <Tooltip animation="fade" arrow="true" theme="light" html={(
         <ItemCompare
           inventoryItem={x}
@@ -29,7 +29,7 @@ const Items = ({
         />
       )}>
         <div
-          className="ItemItem"
+          className="itemItem"
           onClick={() => onSelect(selectedCharacterId, R.prop('id', x))}
         >{x.label}</div>
       </Tooltip>
