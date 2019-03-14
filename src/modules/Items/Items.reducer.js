@@ -1,7 +1,8 @@
+import * as R from 'ramda'
+
 import { endpoint } from '../../common/redux/redux.utils'
 import items from './Items.json'
 import itemsCharacterAttributes from './ItemsCharacterAttributes.json'
-import * as R from 'ramda'
 
 //---------------------------------
 // actions & action creators
@@ -36,12 +37,9 @@ export const INITIAL_STATE = R.map(x => ({
 
 const associateItemWithCharacter = (state, action) => {
   const { characterId, itemId } = R.prop('payload', action)
-  // return R.map(x => R.mergeDeepRight(x, x.id === itemId ? { characterId } : {}))(state)
-  return R.map(x => {
-    console.log(x)
-    console.log(itemId)
-    return R.mergeDeepRight(x, x.id === itemId ? { characterId } : {})
-  })(state)
+  return R.map(x => (
+    R.mergeDeepRight(x, x.id === itemId ? { characterId } : {})
+  ))(state)
 }
 
 const reducers = {

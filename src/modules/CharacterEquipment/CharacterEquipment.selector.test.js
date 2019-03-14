@@ -14,14 +14,12 @@ describe('CharacterEquipment selector', () => {
     ], (weapon3Type) => {
       it('should select character equipped weapon as expected', () => {
         // given
-        // ... a selected character id is provided as a prop
+        // ... a selected character id
         // ... and selected character has multiple items equipped in state
         // ... including 2 weapons equipped (invalid data/unsupported)
         const selectedCharacterId = 123
-        const props = {
-          selectedCharacterId,
-        }
         const state = {
+          selectedCharacterId,
           items: [
             {
               id: 1,
@@ -68,21 +66,19 @@ describe('CharacterEquipment selector', () => {
           ],
         }
         // when ... we selected selected character equipment (equipped items)
-        const result = SUT(state, props)
+        const result = SUT(state)
         // then ... should return expected weapon
         assert.strictEqual(R.pathOr(null, ['characterEquipment', 'weapon', 'name'], result), 'WEAPON THREE')
       })
 
       it('should select character equipped shield as expected', () => {
         // given
-        // ... a selected character id is provided as a prop
+        // ... a selected character id
         // ... and selected character has multiple items equipped in state
         // ... including 2 shields equipped (invalid data/unsupported)
         const selectedCharacterId = 123
-        const props = {
-          selectedCharacterId,
-        }
         const state = {
+          selectedCharacterId,
           items: [
             {
               id: 1,
@@ -129,21 +125,19 @@ describe('CharacterEquipment selector', () => {
           ],
         }
         // when ... we selected selected character equipment (equipped items)
-        const result = SUT(state, props)
+        const result = SUT(state)
         // then ... should return expected shield
         assert.strictEqual(R.pathOr(null, ['characterEquipment', 'shield', 'name'], result), 'SHIELD THREE')
       })
 
       it('should select character equipped accessories as expected', () => {
         // given
-        // ... a selected character id is provided as a prop
+        // ... a selected character id
         // ... and selected character has multiple items equipped in state
         // ... including 3 accessories equipped (invalid data/unsupported)
         const selectedCharacterId = 123
-        const props = {
-          selectedCharacterId,
-        }
         const state = {
+          selectedCharacterId,
           items: [
             {
               id: 1,
@@ -196,7 +190,7 @@ describe('CharacterEquipment selector', () => {
           ],
         }
         // when ... we selected selected character equipment (equipped items)
-        const result = SUT(state, props)
+        const result = SUT(state)
         // then ... should return expected accessories 1 & 2
         assert.strictEqual(R.pathOr(null, ['characterEquipment', 'accessory1', 'name'], result), 'ACCESSORY THREE')
         assert.strictEqual(R.pathOr(null, ['characterEquipment', 'accessory2', 'name'], result), 'ACCESSORY FOUR')
@@ -208,10 +202,8 @@ describe('CharacterEquipment selector', () => {
         // ... and selected character has multiple items equipped in state
         // ... including 2 attires equipped (invalid data/unsupported)
         const selectedCharacterId = 123
-        const props = {
-          selectedCharacterId,
-        }
         const state = {
+          selectedCharacterId,
           items: [
             {
               id: 1,
@@ -258,7 +250,7 @@ describe('CharacterEquipment selector', () => {
           ],
         }
         // when ... we selected selected character equipment (equipped items)
-        const result = SUT(state, props)
+        const result = SUT(state)
         // then ... should return expected attire
         assert.strictEqual(R.pathOr(null, ['characterEquipment', 'attire', 'name'], result), 'ARMOUR THREE')
       })

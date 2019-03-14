@@ -8,7 +8,7 @@ const operatorMap = {
 
 const adjustWithOperatorAndValue = (a, { value: b, operator }) => operatorMap[operator](a, b)
 
-const adjustAttributeWithModifers = (attribute, equippedItemModifiers) => {
+const adjustAttributeWithModifiers = (attribute, equippedItemModifiers) => {
   const baseValue = R.prop('value', attribute)
   const modifiers = R.filter(
     R.propEq('characterAttributeId', R.prop('id', attribute))
@@ -47,7 +47,7 @@ const selector = createSelector(
 
     // adjust attribute using modifiers
     const modifiedCharacterAttributes = R.map(x => {
-      return R.mergeRight(x, adjustAttributeWithModifers(x, equippedItemModifiers))
+      return R.mergeRight(x, adjustAttributeWithModifiers(x, equippedItemModifiers))
     }, mergedCharacterAttributes)
 
     // structure result

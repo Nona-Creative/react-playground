@@ -24,15 +24,23 @@ const selector = createSelector(
     )(items)
 
     // get character ability value for weapon type
-    const weaponTypeCharacterAbilityId = R.prop(R.prop('type', weaponEquippedByCharacter), weaponTypesCharacterAbility)
-    const characterWeaponTypeAbilityValue = R.pathOr(null, [weaponTypeCharacterAbilityId, 'value'], R.indexBy(R.prop('id'), R.prop('attributes', selectedCharacter)))
+    const weaponTypeCharacterAbilityId = R.prop(
+      R.prop('type', weaponEquippedByCharacter),
+      weaponTypesCharacterAbility,
+    )
+    const characterWeaponTypeAbilityValue = R.pathOr(
+      null,
+      [weaponTypeCharacterAbilityId, 'value'],
+      R.indexBy(R.prop('id'), R.prop('attributes', selectedCharacter)),
+    )
 
+    // TODO: add spell damage
     return {
       weapon: weaponEquippedByCharacter,
-      // calculate max normal attack damage
+      // calculate max weapon attack damage
       maxAttackDamage: R.isNil(characterWeaponTypeAbilityValue)
         ? R.prop('damage', weaponEquippedByCharacter)
-        : DnDUtils.calculateMaxNormalAttack(
+        : DnDUtils.calculateMaxWeaponDamage(
           R.prop('class', selectedCharacter),
           R.prop('level', selectedCharacter),
           characterWeaponTypeAbilityValue,

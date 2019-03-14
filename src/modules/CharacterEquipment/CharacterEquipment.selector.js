@@ -13,10 +13,9 @@ const selector = createSelector(
       return {}
     }
 
-    console.log(selectedCharacterId)
     // get items equipped by character
     const itemsEquippedByCharacter = R.compose(
-      R.prop(selectedCharacterId),
+      R.propOr([], selectedCharacterId),
       R.groupBy(R.prop('characterId')),
     )(items)
 

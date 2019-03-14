@@ -4,7 +4,7 @@ import * as R from 'ramda'
 import SUT from './Items.selector'
 
 describe('Items selector', () => {
-  describe('items', () => {
+  describe('selectedCharacterId', () => {
     it('should select selected character id', () => {
       // given ... selected character id in state
       const state = {

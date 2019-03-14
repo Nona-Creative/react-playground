@@ -6,7 +6,8 @@ describe('CharacterAttributes selector', () => {
   describe('characterAttributes', () => {
     it('should select modified character attributes as expected including modification values', () => {
       // given
-      // ... a selected character id and attributes (2) provided as a props
+      // ... selected character attributes (2) provided as a props
+      // ... a selected character id
       // ... and items (with modifiers) equipped by selected character
       // ... in state
       const characterAttributeModifier1 = {
@@ -30,13 +31,13 @@ describe('CharacterAttributes selector', () => {
         value: 2,
       }
       const props = {
-        selectedCharacterId: 111,
         selectedCharacterAttributes: [
           { id: 1, value: 123 },
           { id: 2, value: 10 },
         ],
       }
       const state = {
+        selectedCharacterId: 111,
         characterAttributes: [
           {
             id: 1,
