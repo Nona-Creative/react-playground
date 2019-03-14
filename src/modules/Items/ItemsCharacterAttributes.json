@@ -1,0 +1,282 @@
+[
+  {
+    "id": 1,
+    "characterAttributeId": 9,
+    "itemId": 1,
+    "operator": "add",
+    "value": 30,
+    "label": "+ 30 Melee Attack Damage"
+  },
+  {
+    "id": 2,
+    "characterAttributeId": 9,
+    "itemId": 2,
+    "operator": "add",
+    "value": 35,
+    "label": "+ 35 Melee Attack Damage"
+  },
+  {
+    "id": 3,
+    "characterAttributeId": 9,
+    "itemId": 3,
+    "operator": "add",
+    "value": 28,
+    "label": "+ 28 Melee Attack Damage"
+  },
+  {
+    "id": 4,
+    "characterAttributeId": 9,
+    "itemId": 4,
+    "operator": "add",
+    "value": 32,
+    "label": "+ 32 Melee Attack Damage"
+  },
+  {
+    "id": 5,
+    "characterAttributeId": 9,
+    "itemId": 5,
+    "operator": "add",
+    "value": 20,
+    "label": "+ 20 Melee Attack Damage"
+  },
+  {
+    "id": 6,
+    "characterAttributeId": 10,
+    "itemId": 6,
+    "operator": "add",
+    "value": 20,
+    "label": "+ 20 Armour"
+  },
+  {
+    "id": 7,
+    "characterAttributeId": 10,
+    "itemId": 7,
+    "operator": "add",
+    "value": 50,
+    "label": "+ 50 Armour"
+  },
+  {
+    "id": 8,
+    "characterAttributeId": 10,
+    "itemId": 8,
+    "operator": "add",
+    "value": 75,
+    "label": "+ 75 Armour"
+  },
+  {
+    "id": 9,
+    "characterAttributeId": 10,
+    "itemId": 9,
+    "operator": "add",
+    "value": 25,
+    "label": "+ 25 Armour"
+  },
+  {
+    "id": 10,
+    "characterAttributeId": 10,
+    "itemId": 10,
+    "operator": "add",
+    "value": 15,
+    "label": "+ 15 Armour"
+  },
+  {
+    "id": 11,
+    "characterAttributeId": 10,
+    "itemId": 11,
+    "operator": "add",
+    "value": 5,
+    "label": "+ 5 Armour"
+  },
+  {
+    "id": 12,
+    "characterAttributeId": 9,
+    "itemId": 12,
+    "operator": "add",
+    "value": 5,
+    "label": "+ 5 Melee Attack Damage"
+  },
+  {
+    "id": 13,
+    "characterAttributeId": 11,
+    "itemId": 12,
+    "operator": "add",
+    "value": 10,
+    "label": "+ 10 Spell Damage"
+  },
+  {
+    "id": 14,
+    "characterAttributeId": 9,
+    "itemId": 13,
+    "operator": "add",
+    "value": 5,
+    "label": "+ 5 Melee Attack Damage"
+  },
+  {
+    "id": 15,
+    "characterAttributeId": 11,
+    "itemId": 13,
+    "operator": "add",
+    "value": 15,
+    "label": "+ 15 Spell Damage"
+  },
+  {
+    "id": 16,
+    "characterAttributeId": 9,
+    "itemId": 14,
+    "operator": "add",
+    "value": 30,
+    "label": "+ 30 Melee Attack Damage"
+  },
+  {
+    "id": 17,
+    "characterAttributeId": 4,
+    "itemId": 15,
+    "operator": "add",
+    "value": 50,
+    "label": "Restore 50 Health"
+  },
+  {
+    "id": 18,
+    "characterAttributeId": 4,
+    "itemId": 16,
+    "operator": "add",
+    "value": 70,
+    "label": "Restore 70 Health"
+  },
+  {
+    "id": 19,
+    "characterAttributeId": 4,
+    "itemId": 17,
+    "operator": "add",
+    "value": 50,
+    "label": "Restore 50 Health"
+  },
+  {
+    "id": 20,
+    "characterAttributeId": 1,
+    "itemId": 18,
+    "operator": "add",
+    "value": 2,
+    "label": "+ 2 Strength"
+  },
+  {
+    "id": 21,
+    "characterAttributeId": 7,
+    "itemId": 19,
+    "operator": "add",
+    "value": 2,
+    "label": "+ 2 Charisma"
+  },
+  {
+    "id": 22,
+    "characterAttributeId": 7,
+    "itemId": 20,
+    "operator": "add",
+    "value": 1,
+    "label": "+ 1 Charisma"
+  },
+  {
+    "id": 23,
+    "characterAttributeId": 2,
+    "itemId": 21,
+    "operator": "add",
+    "value": 2,
+    "label": "+ 2 Dexterity"
+  },
+  {
+    "id": 24,
+    "characterAttributeId": 3,
+    "itemId": 22,
+    "operator": "add",
+    "value": 2,
+    "label": "+ 2 Intelligence"
+  },
+  {
+    "id": 25,
+    "characterAttributeId": 5,
+    "itemId": 23,
+    "operator": "add",
+    "value": 3,
+    "label": "+ 3 Wisdom"
+  },
+  {
+    "id": 26,
+    "characterAttributeId": 2,
+    "itemId": 23,
+    "operator": "add",
+    "value": 1,
+    "label": "+ 1 Dexterity"
+  },
+  {
+    "id": 27,
+    "characterAttributeId": 1,
+    "itemId": 23,
+    "operator": "subtract",
+    "value": 2,
+    "label": "- 2 Strength"
+  },
+  {
+    "id": 28,
+    "characterAttributeId": 7,
+    "itemId": 24,
+    "operator": "add",
+    "value": 1,
+    "label": "+ 1 Charisma"
+  },
+  {
+    "id": 29,
+    "characterAttributeId": 3,
+    "itemId": 24,
+    "operator": "subtract",
+    "value": 1,
+    "label": "- 1 Intelligence"
+  },
+  {
+    "id": 30,
+    "characterAttributeId": 2,
+    "itemId": 24,
+    "operator": "subtract",
+    "value": 1,
+    "label": "- 1 Dexterity"
+  },
+  {
+    "id": 31,
+    "characterAttributeId": 1,
+    "itemId": 25,
+    "operator": "add",
+    "value": 1,
+    "label": "+ 1 Strength"
+  },
+  {
+    "id": 32,
+    "characterAttributeId": 8,
+    "itemId": 26,
+    "operator": "add",
+    "value": 35,
+    "label": "+ 35 Ranged Attack Damage"
+  },
+  {
+    "id": 33,
+    "characterAttributeId": 8,
+    "itemId": 27,
+    "operator": "add",
+    "value": 15,
+    "label": "+ 15 Ranged Attack Damage"
+  },
+  {
+    "id": 34,
+    "characterAttributeId": 7,
+    "itemId": 28,
+    "operator": "add",
+    "value": 1,
+    "label": "+ 1 Charisma"
+  },
+  {
+    "id": 35,
+    "characterAttributeId": 2,
+    "itemId": 29,
+    "operator": "add",
+    "value": 1,
+    "label": "+ 1 Dexterity"
+  }
+]

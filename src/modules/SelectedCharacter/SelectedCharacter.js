@@ -1,0 +1,66 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
+import './SelectedCharacter.scss'
+import CharacterAttributes from '../CharacterAttributes'
+import CharacterEquipment from '../CharacterEquipment'
+import CharacterHP from '../CharacterHP'
+import CharacterAttack from '../CharacterAttack'
+import CharacterDefense from '../CharacterDefense'
+
+const SelectedCharacter = ({
+  selectedCharacter,
+}) => selectedCharacter ? (
+  <div className="SelectedCharacter">
+    <div className="SelectedCharacter__header">
+      <div>{selectedCharacter.label}</div>
+      <div>LEVEL {selectedCharacter.level}</div>
+      <div>{selectedCharacter.class}</div>
+    </div>
+
+    <div className="SelectedCharacter__main row">
+      <div className="col left">
+        <div className="SelectedCharacter__portrait character-portrait">
+          <img src="http://www.thain.org/forum/e107_files/public/118_caspian.jpg" />
+        </div>
+        <CharacterAttributes
+          selectedCharacterAttributes={selectedCharacter.attributes}
+        />
+      </div>
+      <div className="col left">
+        <CharacterEquipment />
+        <CharacterHP selectedCharacter={selectedCharacter} />
+        <div className="row">
+          <div className="col">
+            <CharacterAttack selectedCharacter={selectedCharacter} />
+          </div>
+          <div className="col">
+            <CharacterDefense selectedCharacter={selectedCharacter} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+) : null
+
+SelectedCharacter.defaultProps = {
+  selectedCharacter: null,
+}
+
+SelectedCharacter.propTypes = {
+  selectedCharacter: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    level: PropTypes.number.isRequired,
+    class: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    attributes: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        value: PropTypes.number.isRequired,
+      }),
+    ).isRequired,
+  }),
+}
+
+export default SelectedCharacter
+

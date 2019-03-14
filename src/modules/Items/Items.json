@@ -1,0 +1,225 @@
+[
+  {
+    "id": 1,
+    "characterId": 1,
+    "name": "sword-1",
+    "label": "Sword 1",
+    "type": "melee-weapon",
+    "typeLabel": "Melee Weapon",
+    "damage": 200
+  },
+  {
+    "id": 2,
+    "characterId": null,
+    "name": "sword-2",
+    "label": "Sword 2",
+    "type": "melee-weapon",
+    "typeLabel": "Melee Weapon",
+    "damage": 220
+  },
+  {
+    "id": 3,
+    "characterId": null,
+    "name": "axe-1",
+    "label": "Axe 1",
+    "type": "melee-weapon",
+    "typeLabel": "Melee Weapon",
+    "damage": 170
+  },
+  {
+    "id": 4,
+    "characterId": null,
+    "name": "axe-2",
+    "label": "Axe 2",
+    "type": "melee-weapon",
+    "typeLabel": "Melee Weapon",
+    "damage": 160
+  },
+  {
+    "id": 5,
+    "characterId": null,
+    "name": "mace-1",
+    "label": "Mace 1",
+    "type": "melee-weapon",
+    "typeLabel": "Melee Weapon",
+    "damage": 132
+  },
+  {
+    "id": 6,
+    "characterId": 1,
+    "name": "shield-1",
+    "label": "Shield 1",
+    "type": "shield"
+  },
+  {
+    "id": 7,
+    "characterId": null,
+    "name": "heavy-armour-1",
+    "label": "Heavy Armour 1",
+    "type": "attire"
+  },
+  {
+    "id": 8,
+    "characterId": 1,
+    "name": "heavy-armour-2",
+    "label": "Heavy Armour 2",
+    "type": "attire"
+  },
+  {
+    "id": 9,
+    "characterId": null,
+    "name": "light-armour-1",
+    "label": "Light Armour 1",
+    "type": "attire"
+  },
+  {
+    "id": 10,
+    "characterId": 3,
+    "name": "tunic-1",
+    "label": "Tunic 1",
+    "type": "attire"
+  },
+  {
+    "id": 11,
+    "characterId": 2,
+    "name": "robe-1",
+    "label": "Robe 1",
+    "type": "attire"
+  },
+  {
+    "id": 12,
+    "characterId": 2,
+    "name": "staff-1",
+    "label": "Staff 1",
+    "type": "magical-weapon",
+    "typeLabel": "Magical Weapon",
+    "damage": 35
+  },
+  {
+    "id": 13,
+    "characterId": null,
+    "name": "staff-2",
+    "label": "Staff 2",
+    "type": "magical-weapon",
+    "typeLabel": "Magical Weapon",
+    "damage": 40
+  },
+  {
+    "id": 14,
+    "characterId": null,
+    "name": "knife-1",
+    "label": "Knife 1",
+    "type": "melee-weapon",
+    "typeLabel": "Melee Weapon",
+    "damage": 180
+  },
+  {
+    "id": 15,
+    "characterId": null,
+    "name": "healing-potion-1",
+    "label": "Healing Potion 1",
+    "type": "consumable"
+  },
+  {
+    "id": 16,
+    "characterId": null,
+    "name": "healing-potion-2",
+    "label": "Healing Potion 2",
+    "type": "consumable"
+  },
+  {
+    "id": 17,
+    "characterId": null,
+    "name": "healing-potion-3",
+    "label": "Healing Potion 2",
+    "type": "consumable"
+  },
+  {
+    "id": 18,
+    "characterId": null,
+    "name": "strength-potion-1",
+    "label": "Strength Potion 1",
+    "type": "consumable"
+  },
+  {
+    "id": 19,
+    "characterId": null,
+    "name": "charisma-potion-1",
+    "label": "Charisma Potion 1",
+    "type": "consumable"
+  },
+  {
+    "id": 20,
+    "characterId": null,
+    "name": "charisma-potion-2",
+    "label": "Charisma Potion 2",
+    "type": "consumable"
+  },
+  {
+    "id": 21,
+    "characterId": 3,
+    "name": "amulet-dexterity-1",
+    "label": "Amulet of Dexterity 1",
+    "type": "accessory"
+  },
+  {
+    "id": 22,
+    "characterId": 2,
+    "name": "ring-intelligence-1",
+    "label": "Ring of Intelligence 1",
+    "type": "accessory"
+  },
+  {
+    "id": 23,
+    "characterId": 2,
+    "name": "sash-wisdom-1",
+    "label": "Sash of Wisdom 1",
+    "type": "accessory"
+  },
+  {
+    "id": 24,
+    "characterId": null,
+    "name": "beer-1",
+    "label": "Beer 1",
+    "type": "consumable"
+  },
+  {
+    "id": 25,
+    "characterId": 1,
+    "name": "ring-strength-1",
+    "label": "Ring of Strength 1",
+    "type": "accessory"
+  },
+  {
+    "id": 26,
+    "characterId": null,
+    "name": "long-bow-1",
+    "label": "Long Bow 1",
+    "type": "ranged-weapon",
+    "typeLabel": "Ranged Weapon",
+    "damage": 170
+  },
+  {
+    "id": 27,
+    "characterId": 3,
+    "name": "short-bow-1",
+    "label": "short Bow 1",
+    "type": "ranged-weapon",
+    "typeLabel": "Ranged Weapon",
+    "damage": 165
+  },
+  {
+    "id": 28,
+    "characterId": null,
+    "name": "hat-charisma-1",
+    "label": "Hat of Charisma",
+    "type": "accessory"
+  },
+  {
+    "id": 29,
+    "characterId": null,
+    "name": "sash-dexterity-1",
+    "label": "Sash of Dexterity",
+    "type": "accessory"
+  }
+]

@@ -1,0 +1,12 @@
+.SelectedCharacter__header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.SelectedCharacter__main > .col:nth-child(1) {
+  max-width: 220px;
+}
+
+.SelectedCharacter__portrait {
+  height: calc(280px + 1vmin);
+}

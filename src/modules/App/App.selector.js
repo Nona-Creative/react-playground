@@ -7,14 +7,11 @@ import { pathRoutes } from './App.routes'
 const selector = createSelector(
   [
     R.pathOr('', ['location', 'pathname']),
-    R.path(['app', 'title']),
   ],
   (
     pathname,
-    title,
   ) => ({
     route: RouterUtils.pickByKeyRegex(pathRoutes, pathname),
-    title,
   })
 )
 

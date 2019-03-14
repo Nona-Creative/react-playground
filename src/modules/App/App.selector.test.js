@@ -16,23 +16,6 @@ describe('App selector', () => {
     sandbox.restore()
   })
 
-  describe('title', () => {
-    it('should select title as expected', () => {
-      // given ... a title in state
-      const state = {
-        app: {
-          title: 'TITLE',
-        },
-      }
-
-      // when ... we select state required by App component
-      const result = SUT(state)
-
-      // then ... should select title as expected
-      assert.deepStrictEqual(result.title, 'TITLE')
-    })
-  })
-
   describe('route', () => {
     it('should select route as expected', () => {
       // given

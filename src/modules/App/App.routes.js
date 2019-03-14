@@ -1,9 +1,9 @@
-import { ROUTE_HOME } from '../Home/Home.reducer'
+import { ROUTE_INVENTORY } from '../Inventory/Inventory.reducer'
 
 export const routePaths = {
-  [ROUTE_HOME]: '/',
+  [ROUTE_INVENTORY]: '/',
 }
 
 export const pathRoutes = {
-  '^/$': ROUTE_HOME,
+  '^/$': ROUTE_INVENTORY,
 }

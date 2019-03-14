@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "strength",
+    "label": "Strength",
+    "type": "level"
+  },
+  {
+    "id": 2,
+    "name": "dexterity",
+    "label": "Dexterity",
+    "type": "level"
+  },
+  {
+    "id": 3,
+    "name": "intelligence",
+    "label": "Intelligence",
+    "type": "level"
+  },
+  {
+    "id": 4,
+    "name": "health",
+    "label": "Health",
+    "type": "dynamic"
+  },
+  {
+    "id": 5,
+    "name": "wisdom",
+    "label": "Wisdom",
+    "type": "level"
+  },
+  {
+    "id": 6,
+    "name": "constitution",
+    "label": "Constitution",
+    "type": "level"
+  },
+  {
+    "id": 7,
+    "name": "charisma",
+    "label": "Charisma",
+    "type": "level"
+  },
+  {
+    "id": 8,
+    "name": "range-attack-damage",
+    "label": "Range Attack Damage",
+    "type": "attack"
+  },
+  {
+    "id": 9,
+    "name": "melee-attack-damage",
+    "label": "Melee Attack Damage",
+    "type": "attack"
+  },
+  {
+    "id": 10,
+    "name": "armour",
+    "label": "Armour",
+    "type": "defense"
+  },
+  {
+    "id": 11,
+    "name": "spell-damage",
+    "label": "Spell Damage",
+    "type": "attack"
+  }
+]

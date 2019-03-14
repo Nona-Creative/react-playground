@@ -1,0 +1,13 @@
+.ItemCompare {
+  width: 340px;
+  padding: 20px 20px;
+}
+
+.ItemCompare .col:nth-child(1) {
+  padding-right: 20px;
+}
+
+.ItemCompare .col:nth-child(2) {
+  padding-left: 20px;
+  border-left: 1px solid #bbc4cf;
+}
