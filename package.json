@@ -3,6 +3,7 @@
   "description": "NoNa ::: React Playground",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "scripts": {
     "help": "package-json-help.js",
     "start": "react-scripts start",
