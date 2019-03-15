@@ -31,6 +31,7 @@ const CharacterAttack = ({
 )
 
 CharacterAttack.defaultProps = {
+  selectedCharacter: null,
   weapon: null,
   maxAttackDamage: null,
 }

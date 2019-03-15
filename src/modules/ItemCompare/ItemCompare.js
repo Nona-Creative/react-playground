@@ -65,7 +65,7 @@ ItemCompare.propTypes = {
         value: PropTypes.number.isRequired,
       }),
     ).isRequired,
-  }).isRequired,
+  }),
   equippedItems: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

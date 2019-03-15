@@ -10,6 +10,10 @@ const CharacterHP = ({
   <div className="CharacterHP">HP {hitPoints}/{maxHitPoints}</div>
 )
 
+CharacterHP.defaultProps = {
+  selectedCharacter: null,
+}
+
 CharacterHP.propTypes = {
   selectedCharacter: PropTypes.shape({
     level: PropTypes.number.isRequired,

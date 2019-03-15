@@ -47,7 +47,7 @@ const CharacterEquipment = ({
 }
 
 CharacterEquipment.propTypes = {
-  selectedCharacterId: PropTypes.number,
+  selectedCharacterId: PropTypes.number.isRequired,
   characterEquipment: PropTypes.shape({
     weapon: PropTypes.shape({
       id: PropTypes.number.isRequired,

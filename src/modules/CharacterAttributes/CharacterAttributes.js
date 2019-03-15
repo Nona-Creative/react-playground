@@ -20,12 +20,12 @@ const CharacterAttributes = ({
   )
   const listItemValue = x => (
     <span>
-    {x.value === x.baseValue
-      ? (<span>{x.value}</span>)
-      : x.value > x.baseValue
-        ? <span className="green">{x.value} <span className="small">({listItemValueModifiers(x)})</span></span>
-        : <span className="red">{x.value} <span className="small">({listItemValueModifiers(x)})</span></span>
-    }
+      {x.value === x.baseValue
+        ? (<span>{x.value}</span>)
+        : x.value > x.baseValue
+          ? <span className="green">{x.value} <span className="small">({listItemValueModifiers(x)})</span></span>
+          : <span className="red">{x.value} <span className="small">({listItemValueModifiers(x)})</span></span>
+      }
     </span>
   )
   const listItem = (x, i) => (

@@ -42,3 +42,15 @@ rules:
     - extensions:
       - js
       - jsx
+  jsx-a11y/alt-text:
+    - off
+  jsx-a11y/click-events-have-key-events:
+    - off
+  jsx-a11y/no-static-element-interactions:
+    - off
+  jsx-a11y/ria-role:
+    - off
+  react/no-unused-prop-types:
+    - off
+  no-nested-ternary:
+    - off

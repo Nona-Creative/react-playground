@@ -46,9 +46,9 @@ const selector = createSelector(
     ))(selectedCharacterAttributes)
 
     // adjust attribute using modifiers
-    const modifiedCharacterAttributes = R.map(x => {
-      return R.mergeRight(x, adjustAttributeWithModifiers(x, equippedItemModifiers))
-    }, mergedCharacterAttributes)
+    const modifiedCharacterAttributes = R.map(x => (
+      R.mergeRight(x, adjustAttributeWithModifiers(x, equippedItemModifiers))
+    ), mergedCharacterAttributes)
 
     // structure result
     return {

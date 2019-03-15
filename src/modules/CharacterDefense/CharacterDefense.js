@@ -31,6 +31,7 @@ const CharacterDefense = ({
 )
 
 CharacterDefense.defaultProps = {
+  selectedCharacter: null,
   armours: [],
   armourClass: null,
 }
@@ -54,7 +55,7 @@ CharacterDefense.propTypes = {
         }),
       ).isRequired,
     }),
-  ).isRequired,
+  ),
   armourClass: PropTypes.number,
 }
 

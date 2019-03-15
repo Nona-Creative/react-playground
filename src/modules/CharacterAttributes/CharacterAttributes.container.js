@@ -5,8 +5,7 @@ import Component from './CharacterAttributes'
 import selector from './CharacterAttributes.selector'
 
 const mapStateToProps = selector
-const mapDispatchToProps = dispatch => ({
-})
+const mapDispatchToProps = null
 
 export default withRouter(connect(
   mapStateToProps,

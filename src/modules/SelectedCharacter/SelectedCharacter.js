@@ -20,7 +20,7 @@ const SelectedCharacter = ({
     <div className="SelectedCharacter__main row">
       <div className="col left">
         <div className="SelectedCharacter__portrait character-portrait">
-          <img src="http://www.thain.org/forum/e107_files/public/118_caspian.jpg" />
+          <img src="http://www.thain.org/forum/e107_files/public/118_caspian.jpg" alt="character-portrait" />
         </div>
       </div>
       <div className="col left">
