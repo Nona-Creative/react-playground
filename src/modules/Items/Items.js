@@ -21,10 +21,13 @@ const Items = ({
   onSelect,
 }) => {
   const listItem = (x, i) => (
-    <li className="item" key={i}>
+    <li className={x.allowEquip ? 'item' : 'item item--disabled'} key={i}>
       <Tooltip animation="fade" arrow="true" theme="light" html={(
         <div>
-          <div>click to equip</div>
+          {x.allowEquip
+            ? (<div>click to equip</div>)
+            : (<div>you must unequip current item first</div>)
+          }
           <ItemCompare
             inventoryItem={x}
             equippedItems={extractMatchingEquippedItems(characterEquipment)(x)}
@@ -33,7 +36,9 @@ const Items = ({
       )}>
         <div
           className="itemItem"
-          onClick={() => onSelect(selectedCharacterId, R.prop('id', x))}
+          onClick={() => x.allowEquip
+            ? onSelect(selectedCharacterId, R.prop('id', x))
+            : null}
         >{x.label}</div>
       </Tooltip>
     </li>

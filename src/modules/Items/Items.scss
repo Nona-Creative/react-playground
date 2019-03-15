@@ -15,6 +15,13 @@
   border: 2px dashed #78aa6a;
 }
 
+.item--disabled,
+.item--disabled:hover {
+  background-color: #d9e1e0;
+  border: 2px dashed #a9aaa9;
+  cursor: default;
+}
+
 .itemItem {
   text-align: center;
   text-transform: uppercase;

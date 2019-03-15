@@ -18,6 +18,7 @@ export const itemTypeEquipmentSlots = {
   [itemTypes.SHIELD]: ['shield'],
   [itemTypes.ACCESSORY]: ['accessory1', 'accessory2'],
   [itemTypes.ATTIRE]: ['attire'],
+  [itemTypes.CONSUMABLE]: [],
 }
 
 export const weaponTypesCharacterAbility = {

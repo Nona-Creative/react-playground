@@ -8,4 +8,5 @@ export const itemTypes = {
   ARMOUR_HEAVY: 'armour-heavy',
   ARMOUR_LIGHT: 'armour-light',
   ARMOUR_MAGICAL: 'armour-magical',
+  CONSUMABLE: 'consumable',
 }
