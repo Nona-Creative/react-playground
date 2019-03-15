@@ -5,6 +5,7 @@
     "label": "Kitiara uth Matar",
     "level": 15,
     "class": "fighter",
+    "portrait": "http://www.postavy.cz/foto/kitiara-uth-matar-foto.jpg",
     "attributes": [
       { "id": 1, "value": 14 },
       { "id": 2, "value": 18 },
@@ -20,6 +21,7 @@
     "label": "Raistlin Majere",
     "level": 20,
     "class": "wizard",
+    "portrait": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfk7FhxvtdRcDMxMWYLU-RIKS9ml_ACo-LVjvFkvxnTSMgvLKvEA",
     "attributes": [
       { "id": 1, "value": 10 },
       { "id": 2, "value": 16 },
@@ -35,6 +37,7 @@
     "label": "Tasslehoff Burrfoot",
     "level": 12,
     "class": "rogue",
+    "portrait": "https://dragonlancereadingorder.com/images/characters/tasslehoff_burrfoot.jpg",
     "attributes": [
       { "id": 1, "value": 13 },
       { "id": 2, "value": 16 },
