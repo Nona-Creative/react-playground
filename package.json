@@ -44,8 +44,10 @@
     "redux": "^4.0.1",
     "redux-first-router": "^2.1.1",
     "redux-first-router-link": "^2.1.1",
+    "redux-observable": "^1.1.0",
+    "sinon": "^7.2.7",
     "reselect": "^4.0.0",
-    "sinon": "^7.2.7"
+    "rxjs": "^6.4.0"
   },
   "devDependencies": {
     "eslint": "^5.8.0",
