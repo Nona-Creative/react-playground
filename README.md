@@ -50,16 +50,16 @@ npm run test
 Cypress Integration tests
 ---
 
-clear previous cypress versions on machine
+clear previous Cypress versions on machine
 ```bash
 npm cypress:clear-cache
 ```
-install cypress
+install Cypress
 ```bash
 npm cypress:install
 ```
 
-open and run cypress tests
+open and run Cypress tests
 ```bash
 npm cypress:open
 ```
@@ -68,6 +68,10 @@ After running `npm cypress:open` for the first time cypress will automatically c
 Because of this have added the `/cypress` folder to the `.gitignore` file. If you would like to update any of the tests manually you can remove it from the `.gitignore`.
 
 The automatically created files seem to cover most of the functionality of the library in a helpful way.
+
+More information on Cypress can be found here - 
+
+https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell
 
 Contributing
 ---
