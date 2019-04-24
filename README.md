@@ -54,7 +54,6 @@ clear previous cypress versions on machine
 ```bash
 npm cypress:clear-cache
 ```
-
 install cypress
 ```bash
 npm cypress:install
@@ -64,6 +63,11 @@ open and run cypress tests
 ```bash
 npm cypress:open
 ```
+
+After running `npm cypress:open` for the first time cypress will automatically create some example tests.
+Because of this have added the `/cypress` folder to the `.gitignore` file. If you would like to update any of the tests manually you can remove it from the `.gitignore`.
+
+The automatically created files seem to cover most of the functionality of the library in a helpful way.
 
 Contributing
 ---
