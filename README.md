@@ -47,6 +47,24 @@ run all unit tests
 npm run test
 ```
 
+Cypress Integration tests
+---
+
+clear previous cypress versions on machine
+```bash
+npm cypress:clear-cache
+```
+
+install cypress
+```bash
+npm cypress:install
+```
+
+open and run cypress tests
+```bash
+npm cypress:open
+```
+
 Contributing
 ---
 

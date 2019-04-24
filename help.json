@@ -4,5 +4,8 @@
   "start": "serve project",
   "test": "run all unit tests",
   "test:coverage": "run all unit tests with coverage",
-  "test:watch": "run all unit tests in watch mode"
+  "test:watch": "run all unit tests in watch mode",
+  "cypress:clear-cache": "clears out any previous versions of cypress that might be installed",
+  "cypress:install": "install cypress",
+  "cypress:open": "run cypress"
 }

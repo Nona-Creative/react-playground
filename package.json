@@ -14,7 +14,10 @@
     "lint:js": "eslint --ext .js --ignore-path .gitignore .",
     "_eject": "react-scripts eject",
     "_git:pre-commit": "npm-run-all lint:js",
-    "_git:pre-push": "npm-run-all lint:js test:coverage"
+    "_git:pre-push": "npm-run-all lint:js test:coverage",
+    "cypress:clear-cache": "cypress cache clear",
+    "cypress:install": "cypress install",
+    "cypress:open": "cypress open"
   },
   "husky": {
     "hooks": {
@@ -40,6 +43,8 @@
     "react-scripts": "2.1.5"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "cypress": "^3.2.0",
     "eslint": "^5.8.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
