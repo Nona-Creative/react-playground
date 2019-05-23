@@ -1,7 +1,7 @@
 React Playground :: Node Version
 ===
 
-The Node version for this proejct is automatically managed by:
+The Node version for this project is automatically managed by:
  - a ``.node-version`` file
  - the ``NVM`` and ``AVM`` packages
 
