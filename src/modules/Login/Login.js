@@ -26,18 +26,14 @@ function Login() {
     <div className="Login">
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="username">
-            Username
-          </label>
-          <input id={'username'} type="text" onChange={handleChange}/>
+          Username
+          <input id='username' type="text" onChange={handleChange}/>
         </div>
         <div>
-          <label htmlFor="password">
-            Password
-          </label>
-          <input id={'password'} type="password" onChange={handleChange}/>
+          Password
+          <input id='password' type="password" onChange={handleChange}/>
         </div>
-        <input type="submit" value={'Submit'}/>
+        <input type="submit" value='Submit'/>
       </form>
     </div>
   )
