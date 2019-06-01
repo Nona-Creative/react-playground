@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Login from '../Login/Login'
 import './App.scss'
 
 const App = () => (
@@ -8,7 +8,7 @@ const App = () => (
       REACT Playground
     </header>
     <main className="App__main">
-      A minimal React project for experimenting and refining ideas / solutions
+      <Login/>
     </main>
   </div>
 )

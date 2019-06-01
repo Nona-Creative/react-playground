@@ -32,6 +32,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "aws-amplify": "^1.1.28",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.3",

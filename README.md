@@ -46,3 +46,14 @@ Additional Docs
  3. [Prerequisites](docs/prerequisites.md)
  4. [AWS](docs/aws.md)
  5. [Node Version](docs/node-version.md)
+ 
+ 
+AppSync getting started
+---
+
+1. Create `config.js` file based off template in `sample.config.js`
+2. Fill in config details in newly created `config.js`
+3. Login with username and password for existing user in pool
+4. Console will log out error message as well as successful login
+
+> Used with https://github.com/Nona-Creative/sls-appsync-playground
