@@ -2,15 +2,15 @@ import React from 'react'
 import { Auth } from 'aws-amplify'
 
 const fields = {
-  username: null,
-  password: null,
+  confirmationCode: null,
+  confirmationUsername: null,
 }
 
 async function handleSubmit(event) {
   event.preventDefault()
 
   try {
-    await Auth.signIn(fields.username, fields.password)
+    await Auth.confirmSignUp(fields.confirmationUsername, fields.confirmationCode)
     console.log('great success')
   } catch (e) {
     console.log(e.message)
@@ -21,20 +21,20 @@ function handleChange(event) {
   fields[ event.target.id ] = event.target.value
 }
 
-function Login() {
+function Confirm() {
   return (
-    <div className="Login">
+    <div className="Confirm">
       <h2>
-        Login
+        Confirm
       </h2>
       <form onSubmit={handleSubmit}>
         <div>
-          Username
-          <input id='username' type="text" onChange={handleChange}/>
+          Confirmation Code
+          <input id='confirmationCode' type="text" onChange={handleChange}/>
         </div>
         <div>
-          Password
-          <input id='password' type="password" onChange={handleChange}/>
+          Username
+          <input id='confirmationUsername' type="text" onChange={handleChange}/>
         </div>
         <input type="submit" value='Submit'/>
       </form>
@@ -42,4 +42,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Confirm

@@ -2,18 +2,22 @@ import React from 'react'
 import { Auth } from 'aws-amplify'
 
 const fields = {
-  username: null,
-  password: null,
+  email: null,
+  signupPassword: null,
 }
 
 async function handleSubmit(event) {
   event.preventDefault()
 
   try {
-    await Auth.signIn(fields.username, fields.password)
-    console.log('great success')
+    await Auth.signUp({
+      username: fields.email,
+      password: fields.signupPassword,
+    })
+
+    console.log('success')
   } catch (e) {
-    console.log(e.message)
+    alert(e.message)
   }
 }
 
@@ -21,20 +25,20 @@ function handleChange(event) {
   fields[ event.target.id ] = event.target.value
 }
 
-function Login() {
+function Signup() {
   return (
-    <div className="Login">
+    <div className="Signup">
       <h2>
-        Login
+        Signup
       </h2>
       <form onSubmit={handleSubmit}>
         <div>
-          Username
-          <input id='username' type="text" onChange={handleChange}/>
+          Email
+          <input id='email' type="text" onChange={handleChange}/>
         </div>
         <div>
           Password
-          <input id='password' type="password" onChange={handleChange}/>
+          <input id='signupPassword' type="password" onChange={handleChange}/>
         </div>
         <input type="submit" value='Submit'/>
       </form>
@@ -42,4 +46,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Signup
