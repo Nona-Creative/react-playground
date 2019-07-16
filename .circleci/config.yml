@@ -6,7 +6,7 @@ version: 2
 
 base_node: &base_node
   docker:
-  - image: circleci/node:8.10.0-browsers
+    - image: circleci/node:8.10.0-browsers
 
 # --------------------------------
 # common : steps
@@ -15,14 +15,14 @@ base_node: &base_node
 step_cache_restore_npm: &step_cache_restore_npm
   name: 'Restore Cache: NPM Dependencies'
   keys:
-  - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-  - node-v1-{{ .Branch }}-
-  - node-v1-
+    - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+    - node-v1-{{ .Branch }}-
+    - node-v1-
 
 step_cache_save_npm: &step_cache_save_npm
   name: 'Save Cache: NPM Dependencies'
   paths:
-  - ~/usr/local/lib/node_modules  # location depends on npm version
+    - ~/usr/local/lib/node_modules # location depends on npm version
   key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
 
 step_run_node_env_info: &step_run_node_env_info
@@ -51,10 +51,10 @@ step_lint_js: &step_lint_js
   command: |
     npm run lint:js
 
-step_audit_dependencies: &step_audit_dependencies
+step_npm_audit: &step_npm_audit
   name: 'Audit NPM Dependencies'
   command: |
-    npm run audit
+    npm run npm:audit
 
 step_test_coverage: &step_test_coverage
   name: 'Tests Coverage'
@@ -66,25 +66,24 @@ step_test: &step_test
   command: |
     npm run test
 
-
 # --------------------------------
 # jobs
 # --------------------------------
 
 jobs:
-  audit-linting-tests:
+  pull-request-job:
     <<: *base_node
     steps:
-    - checkout
-    - run: *step_run_update_npm
-    - restore_cache: *step_cache_restore_npm
-    - run: *step_run_node_env_info
-    - run: *step_run_install_npm_dependencies
-    - save_cache: *step_cache_save_npm
-    - run: *step_audit_dependencies
-    - run: *step_lint_js
-    - run: *step_test_coverage
-    - run: *step_test
+      - checkout
+      - run: *step_run_update_npm
+      - restore_cache: *step_cache_restore_npm
+      - run: *step_run_node_env_info
+      - run: *step_run_install_npm_dependencies
+      - save_cache: *step_cache_save_npm
+      - run: *step_npm_audit
+      - run: *step_lint_js
+      - run: *step_test_coverage
+      - run: *step_test
 
 # --------------------------------
 # workflows
@@ -94,4 +93,4 @@ workflows:
   version: 2
   build:
     jobs:
-    - audit-linting-tests
+      - pull-request-job

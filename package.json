@@ -5,8 +5,8 @@
   "private": true,
   "homepage": "./",
   "scripts": {
-    "audit": "npm run _audit:spec",
-    "_audit:spec": "audit-ci --critical",
+    "npm:audit": "npm run _npm:audit:spec",
+    "_npm:audit:spec": "audit-ci --critical",
     "ci:validate": "circleci config validate",
     "help": "package-json-help.js",
     "start": "react-scripts start",

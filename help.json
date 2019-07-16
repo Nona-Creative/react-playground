@@ -1,5 +1,5 @@
 {
-  "audit": "audit npm dependencies for critical vulnerabilities",
+  "npm:audit": "audit npm dependencies for critical vulnerabilities",
   "ci:validate": "validate CircleCI config",
   "init": "initialize project",
   "lint:js": "run JS linter",
