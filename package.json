@@ -5,6 +5,9 @@
   "private": true,
   "homepage": "./",
   "scripts": {
+    "npm:audit": "npm run _npm:audit:spec",
+    "_npm:audit:spec": "audit-ci --critical",
+    "ci:validate": "circleci config validate",
     "help": "package-json-help.js",
     "start": "react-scripts start",
     "_build": "react-scripts build",
@@ -13,8 +16,8 @@
     "test:watch": "react-scripts test --env=jsdom --watchAll",
     "lint:js": "eslint --ext .js --ignore-path .gitignore .",
     "_eject": "react-scripts eject",
-    "_git:pre-commit": "npm-run-all lint:js",
-    "_git:pre-push": "npm-run-all lint:js test:coverage"
+    "_git:pre-commit": "npm-run-all lint:js ci:validate",
+    "_git:pre-push": "npm-run-all lint:js test:coverage ci:validate"
   },
   "husky": {
     "hooks": {
@@ -40,6 +43,7 @@
     "react-scripts": "2.1.5"
   },
   "devDependencies": {
+    "audit-ci": "^2.1.0",
     "eslint": "^5.8.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
