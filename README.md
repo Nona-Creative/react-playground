@@ -20,9 +20,8 @@ Quick Start
 ---
 
  1. go through everything in [Prerequisites](docs/prerequisites.md)
- 2. ``npm i`` install NPM dependencies
- 3. ``npm run init`` initialize the project (creates local env files)
- 4. ``npm run start`` start react app in your browser
+ 2. ``npm run init`` initialize the project (creates local env files and install dependencies)
+ 3. ``npm run start`` start react app in your browser
 
 Contributing
 ---
