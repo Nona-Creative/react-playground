@@ -4,6 +4,12 @@ env:
   mocha: true
 globals:
   __DEV__: true
+overrides:
+  - files:
+    - "**/*.test.js"
+    - "**/*.test.jsx"
+    env:
+      jest: true
 extends:
   - 'airbnb'
   - 'prettier'
