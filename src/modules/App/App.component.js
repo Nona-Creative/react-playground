@@ -2,7 +2,7 @@ import React from 'react'
 
 import './App.css'
 
-const AppComponent = () => (
+const Component = () => (
   <div className="App">
     <header className="App__heading">
       REACT Playground
@@ -13,5 +13,5 @@ const AppComponent = () => (
   </div>
 )
 
-export default AppComponent
+export default Component
 
