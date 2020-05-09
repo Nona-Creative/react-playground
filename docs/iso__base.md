@@ -29,7 +29,7 @@ serviceWorker.unregister()
 
 \`;
 
-##### Main App Component
+##### App Component
 
 src/modules/App/App.js
 

@@ -12,7 +12,7 @@ src/index.js
 <<[](../src/index.js)`;
 
 
-##### Main App Component
+##### App Component
 
 src/modules/App/App.js
 
