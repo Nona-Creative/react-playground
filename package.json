@@ -61,8 +61,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run _git:pre-push",
-      "pre-commit": "npm run _git:pre-commit"
+      "pre-commit": "npm run _git:pre-commit",
+      "pre-push": "npm run _git:pre-push"
     }
   },
   "eslintConfig": {
