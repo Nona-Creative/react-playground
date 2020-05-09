@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './App.css'
+import Counter from '../Counter'
 
 const App = () => (
   <div className="App">
@@ -8,10 +9,9 @@ const App = () => (
       REACT Playground
     </header>
     <main className="App__main">
-      A minimal React project for experimenting and refining ideas / solutions
+      <Counter />
     </main>
   </div>
 )
 
 export default App
-
