@@ -25,8 +25,9 @@
     "test:watch": "react-scripts test --env=jsdom --watchAll",
     "lint:js": "eslint --ext .js --ignore-path .gitignore --ignore-path .eslintignore .",
     "_eject": "react-scripts eject",
-    "_git:pre-commit": "npm-run-all docs:render lint:js ci:validate",
-    "_git:pre-push": "npm-run-all docs:render lint:js test:coverage ci:validate",
+    "_git:check": "git diff --exit-code",
+    "_git:pre-commit": "npm-run-all docs:render _git:check lint:js ci:validate",
+    "_git:pre-push": "npm-run-all docs:render _git:check lint:js test:coverage ci:validate",
     "help": "package-json-help.js",
     "init": "cp .env.tpl .env && npm i"
   },
