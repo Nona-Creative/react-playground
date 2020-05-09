@@ -2,7 +2,9 @@
 
 ## Basic React setup
 
-##### src/index.js
+##### Entry point
+
+src/index.js
 
 ```javascript
 import React from 'react'
@@ -27,7 +29,9 @@ serviceWorker.unregister()
 
 \`;
 
-##### src/modules/App/App.js
+##### Main App Component
+
+src/modules/App/App.js
 
 ```javascript
 import React from 'react'

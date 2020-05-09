@@ -10,6 +10,7 @@ function exit-if-changes() {
     echo "There are uncommitted changes, please commit"
     exit 2
   fi
+  git diff --exit-code || (echo "There are uncommitted changes, please commit" && exit 2)
 }
 
 "$@"
