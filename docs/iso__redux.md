@@ -37,7 +37,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
-    </Provider>,
+    </Provider>
 ```
 
 src/modules/Counter/Counter.container.js
