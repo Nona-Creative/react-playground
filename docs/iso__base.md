@@ -11,12 +11,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import './index.css'
-import App from './modules/App'
+import AppComponent from './modules/App'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppComponent />
   </React.StrictMode>,
   document.getElementById('root'),
 )
@@ -36,17 +36,17 @@ import React from 'react'
 
 import './App.css'
 
-const App = () => (
+const AppComponent = () => (
   <div className="App">
     <header className="App__heading">
       REACT Playground
     </header>
     <main className="App__main">
-      A minimal React project for experimenting and refining ideas / solutions
+      ...
     </main>
   </div>
 )
 
-export default App
+export default AppComponent
 ```
 
