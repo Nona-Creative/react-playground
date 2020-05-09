@@ -17,4 +17,4 @@ src/index.js
 src/modules/App/App.js
 
 {lang=javascript}  
-<<[](../src/modules/App/App.js)
+<<[](../src/modules/App/App.component.js)

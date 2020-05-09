@@ -3,7 +3,7 @@ import React from 'react'
 import './App.css'
 import Counter from '../Counter'
 
-const App = () => (
+const Component = () => (
   <div className="App">
     <header className="App__heading">
       REACT Playground
@@ -14,4 +14,4 @@ const App = () => (
   </div>
 )
 
-export default App
+export default Component
