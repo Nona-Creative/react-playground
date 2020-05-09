@@ -27,8 +27,6 @@ ReactDOM.render(
 serviceWorker.unregister()
 ```
 
-\`;
-
 ##### App Component
 
 src/modules/App/App.js
@@ -51,6 +49,4 @@ const App = () => (
 
 export default App
 ```
-
-\`;
 
