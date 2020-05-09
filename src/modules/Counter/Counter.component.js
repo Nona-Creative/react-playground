@@ -11,11 +11,13 @@ const Component = ({ onIncrement, onDecrement, count }) => (
     <main className="Counter__main">
       {count}
       <button
+        type="button"
         className="button button__decrement"
         data-testid="button-decrement"
         onClick={() => onDecrement(1)}
       >-</button>
       <button
+        type="button"
         className="button button__increment"
         data-testid="button-increment"
         onClick={() => onIncrement(1)}

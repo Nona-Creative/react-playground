@@ -13,7 +13,8 @@
   "private": true,
   "homepage": "./",
   "scripts": {
-    "docs:gen": "bash scripts/markdown.sh render",
+    "docs:gen": "bash scripts/docs.sh generate",
+    "docs:render": "bash scripts/docs.sh render",
     "npm:audit": "npm run _npm:audit:spec",
     "_npm:audit:spec": "audit-ci --critical",
     "ci:validate": "circleci config validate",
@@ -24,18 +25,21 @@
     "test:watch": "react-scripts test --env=jsdom --watchAll",
     "lint:js": "eslint --ext .js --ignore-path .gitignore --ignore-path .eslintignore .",
     "_eject": "react-scripts eject",
-    "_git:pre-commit": "npm-run-all docs:gen lint:js ci:validate",
-    "_git:pre-push": "npm-run-all docs:gen lint:js test:coverage ci:validate",
+    "_git:check": "bash scripts/git.sh exit-if-changes",
+    "_git:pre-commit": "npm-run-all docs:render _git:check lint:js ci:validate",
+    "_git:pre-push": "npm-run-all docs:render _git:check lint:js test:coverage ci:validate",
     "help": "package-json-help.js",
     "init": "cp .env.tpl .env && npm i"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.3.5",
+    "prop-types": "^15.7.2",
     "ramda": "^0.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "@fullstackio/remark-cq": "^6.1.0",
@@ -62,8 +66,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run _git:pre-push",
-      "pre-commit": "npm run _git:pre-commit"
+      "pre-commit": "npm run _git:pre-commit",
+      "pre-push": "npm run _git:pre-push"
     }
   },
   "eslintConfig": {

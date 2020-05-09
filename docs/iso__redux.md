@@ -44,11 +44,14 @@ src/modules/Counter/Counter.container.js
 
 ```javascript
 import { connect } from 'react-redux'
+import { applySpec, prop } from 'ramda'
 
 import Component from './Counter.component'
-import { incrementCount, decrementCounter } from './Counter.reducer'
+import { incrementCounter, decrementCounter } from './Counter.reducer'
 
-const mapStateToProps = null
+const mapStateToProps = applySpec({
+  count: prop('counter'),
+})
 
 const mapDispatchToProps = dispatch => ({
   onIncrement: n => dispatch(incrementCounter(n)),
@@ -134,3 +137,4 @@ const counterReducer = createReducer(INITIAL_STATE, {
 
 export default counterReducer
 ```
+

@@ -23,7 +23,7 @@ describe('modules/Counter/Counter.component', () => {
         <Counter
           onIncrement={onIncrementStub}
           onDecrement={onDecrementStub}
-        />
+        />,
       )
     })
   })
@@ -36,7 +36,7 @@ describe('modules/Counter/Counter.component', () => {
         <Counter
           onIncrement={onIncrementStub}
           onDecrement={onDecrementStub}
-        />
+        />,
       )
 
       // when ... we click the increment button
