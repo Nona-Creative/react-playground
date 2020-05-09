@@ -3,6 +3,7 @@ React Playground
 
 > A minimal React project for experimenting and refining templates / deployment pipelines
 
+
 Available commands
 --- 
 
@@ -16,6 +17,7 @@ to see a list of available Make commands run:
 make
 ```
 
+
 Quick Start
 ---
 
@@ -23,10 +25,12 @@ Quick Start
  2. ``npm run init`` initialize the project (creates local env files and install dependencies)
  3. ``npm run start`` start react app in your browser
 
+
 Contributing
 ---
 
 Before contributing please read through everything in [Contributing](docs/contributing.md)
+
 
 Testing
 ---
