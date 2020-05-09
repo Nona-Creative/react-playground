@@ -1,4 +1,6 @@
 {
+  "docs:gen": "generate doc markdown template file for this branch",
+  "docs:render": "render doc markdown file for this branch (from template file)",
   "npm:audit": "audit npm dependencies for critical vulnerabilities",
   "ci:validate": "validate CircleCI config",
   "lint:js": "run JS linter",

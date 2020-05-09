@@ -13,7 +13,8 @@
   "private": true,
   "homepage": "./",
   "scripts": {
-    "docs:gen": "bash scripts/markdown.sh render",
+    "docs:gen": "bash scripts/docs.sh generate",
+    "docs:render": "bash scripts/docs.sh render",
     "npm:audit": "npm run _npm:audit:spec",
     "_npm:audit:spec": "audit-ci --critical",
     "ci:validate": "circleci config validate",
