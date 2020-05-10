@@ -1,6 +1,23 @@
 # Base
 
-## Basic React setup
+## Design
+
+### feature module structure
+
+> Goal is a structure that allows as much decoupling between feature modules as possible
+
+```text
++-- modules
+    +-- App
+    +-- Counter
+        +-- CounterDetail ... detail view
+        +-- CounterSummary ... summary view (used in list view)
+        +-- Counters ... list view
+        +-- ... common files
+        +-- ... redux files
+```
+
+## Code
 
 ##### Entry point
 
@@ -67,6 +84,168 @@ const Component = () => (
     </main>
   </div>
 )
+
+export default Component
+```
+
+###### Counter module
+
+src/modules/Counter/CounterSummary/CounterSummary.component.js
+
+```javascript
+import React from 'react'
+import PropTypes from 'prop-types'
+import { isNil } from 'ramda'
+
+import './CounterSummary.css'
+
+const CounterSummary = ({ onSelect, id, label }) => {
+  const emptyView = (
+    <div>...</div>
+  )
+
+  /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
+  const populatedView = (
+    <li
+      className="CounterSummary"
+      key={id}
+      role="listbox"
+      tabIndex={-1}
+      onClick={() => onSelect(id)}
+      onKeyDown={() => onSelect(id)}
+    >{label}</li>
+  )
+  /* eslint-enable jsx-a11y/no-noninteractive-element-to-interactive-role */
+
+  return isNil(id) ? emptyView : populatedView
+}
+
+CounterSummary.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  id: PropTypes.string,
+  label: PropTypes.string,
+}
+
+CounterSummary.defaultProps = {
+  id: null,
+  label: '',
+}
+
+export default CounterSummary
+```
+
+src/modules/Counter/CounterList/CounterList.component.js
+
+```javascript
+import React from 'react'
+import PropTypes from 'prop-types'
+import { map, isEmpty } from 'ramda'
+
+import './CounterList.css'
+import CounterSummary from '../CounterSummary/CounterSummary.component'
+
+const CounterList = ({ onSelectCounter, counters }) => {
+  const emptyView = (
+    <div>...</div>
+  )
+
+  const populatedView = (
+    <ul>
+      {map(({ id, label }) => (
+        <CounterSummary
+          key={id}
+          id={id}
+          label={label}
+          onSelect={onSelectCounter}
+        />
+      ), counters)}
+    </ul>
+  )
+
+  return (
+    <div className="CounterList">
+      <header className="CounterList__heading">
+        Counters
+      </header>
+      <main className="CounterList__main">
+        {isEmpty(counters) ? emptyView : populatedView}
+      </main>
+    </div>
+  )
+}
+
+CounterList.propTypes = {
+  onSelectCounter: PropTypes.func.isRequired,
+  counters: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    label: PropTypes.string,
+  })),
+}
+
+CounterList.defaultProps = {
+  counters: [],
+}
+
+export default CounterList
+```
+
+src/modules/Counter/CounterDetail/CounterDetail.component.js
+
+```javascript
+import React from 'react'
+import PropTypes from 'prop-types'
+import { isNil, or } from 'ramda'
+
+import './CounterDetail.css'
+
+const Component = ({ onIncrement, onDecrement, counterId, count, label }) => {
+  const noSelectedCounterView = (
+    <div>...</div>
+  )
+
+  const selectedCounterView = (
+    <>
+      {count}
+      <button
+        type="button"
+        className="button button__decrement"
+        data-testid="button-decrement"
+        onClick={() => onDecrement(counterId, 1)}
+      >-</button>
+      <button
+        type="button"
+        className="button button__increment"
+        data-testid="button-increment"
+        onClick={() => onIncrement(counterId, 1)}
+      >+</button>
+    </>
+  )
+
+  return (
+    <div className="CounterDetail">
+      <header className="CounterDetail__heading">
+        {label}
+      </header>
+      <main className="CounterDetail__main">
+        {or(isNil(counterId), isNil(count)) ? noSelectedCounterView : selectedCounterView}
+      </main>
+    </div>
+  )
+}
+
+Component.propTypes = {
+  onIncrement: PropTypes.func.isRequired,
+  onDecrement: PropTypes.func.isRequired,
+  counterId: PropTypes.number,
+  count: PropTypes.number,
+  label: PropTypes.string,
+}
+
+Component.defaultProps = {
+  counterId: null,
+  count: null,
+  label: '',
+}
 
 export default Component
 ```
