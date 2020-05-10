@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect'
 import { prop, path } from 'ramda'
 
-export default createSelector(
+export const CounterDetailComponentSelector = createSelector(
   [
     prop('selectedCounter'),
     prop('counters'),

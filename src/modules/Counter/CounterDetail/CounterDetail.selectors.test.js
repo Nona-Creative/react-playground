@@ -1,4 +1,4 @@
-import selector from './CounterDetail.selector'
+import { CounterDetailComponentSelector } from './CounterDetail.selectors'
 
 describe('modules/Counter/CounterDetail/CounterDetail.selector', () => {
   it('should select props required by CounterDetail component as expected', () => {
@@ -14,7 +14,7 @@ describe('modules/Counter/CounterDetail/CounterDetail.selector', () => {
 
     // when ... we select for CounterDetail component's props
     // then ... should return as expected
-    const result = selector(state)
+    const result = CounterDetailComponentSelector(state)
     expect(result).toEqual({
       counterId: '456',
       count: 10,

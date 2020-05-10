@@ -2,9 +2,9 @@ import { connect } from 'react-redux'
 
 import { incrementCounter, decrementCounter } from '../counters.reducer'
 import Component from './CounterDetail.component'
-import componentSelector from './CounterDetail.selector'
+import { CounterDetailComponentSelector } from './CounterDetail.selectors'
 
-const mapStateToProps = componentSelector
+const mapStateToProps = CounterDetailComponentSelector
 
 const mapDispatchToProps = dispatch => ({
   onIncrement: (counterId, amount) => dispatch(incrementCounter(counterId, amount)),

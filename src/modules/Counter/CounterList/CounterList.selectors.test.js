@@ -1,6 +1,6 @@
 import { keys } from 'ramda'
 
-import selector from './CounterList.selector'
+import { CounterListComponentSelector } from './CounterList.selectors'
 
 describe('modules/Counter/CounterList/CounterList.selector', () => {
   it('should select props required by CounterList component as expected', () => {
@@ -15,7 +15,7 @@ describe('modules/Counter/CounterList/CounterList.selector', () => {
 
     // when ... we select for CounterList component's props
     // then ... should return all expected keys
-    const result = selector(state)
+    const result = CounterListComponentSelector(state)
     expect(keys(result)).toEqual([
       'counters',
     ])

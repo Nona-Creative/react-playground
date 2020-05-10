@@ -2,9 +2,9 @@ import { connect } from 'react-redux'
 
 import { selectCounter } from '../selectedCounter.reducer'
 import Component from './CounterList.component'
-import componentSelector from './CounterList.selector'
+import { CounterListComponentSelector } from './CounterList.selectors'
 
-const mapStateToProps = componentSelector
+const mapStateToProps = CounterListComponentSelector
 
 const mapDispatchToProps = dispatch => ({
   onSelectCounter: id => dispatch(selectCounter(id)),
