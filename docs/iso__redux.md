@@ -1,8 +1,47 @@
-## Redux
+# Redux
 
-### src/common/redux/store.js
+## Design
 
-Here we add a Redux store ....
+### feature module structure
+
+> goal is a structure that allows as much decoupling between feature modules as possible
+
+```text
++-- modules
+    +-- App
+    +-- Counter
+        +-- CounterDetail ... detail view
+        +-- CounterSummary ... summary view (used in list view)
+        +-- Counters ... list view
+        +-- ... common files
+```
+
+### Redux state
+
+> goal is a files structure that allows as much decoupling between feature modules as possible
+> and filenames that correspond to state tree
+
+tree
+
+```text
+ - selectedCounter : id
+ - counters : { [id]: { count } }
+```
+
+files
+
+```text
++-- modules
+    +-- Counter
+        +-- selectedCounter.reducer.js
+        +-- counters.reducer.js
+```
+
+## Code
+
+###### Store
+
+src/common/redux/store.js
 
 ```javascript
 import { createStore } from 'redux'
@@ -12,9 +51,9 @@ import rootReducer from './reducers'
 export default createStore(rootReducer)
 ```
 
-### src/common/redux/reducers.js
+###### Root Reducer
 
-Here wse add our root reducers ...
+src/common/redux/reducers.js
 
 ```javascript
 import { combineReducers } from 'redux'
@@ -24,7 +63,9 @@ import { counter } from '../../modules/Counter'
 export default combineReducers({ counter })
 ```
 
-### src/index.js
+###### React changes
+
+src/index.js
 
 ```javascript
 import { Provider } from 'react-redux'
@@ -40,14 +81,16 @@ ReactDOM.render(
     </Provider>
 ```
 
-src/modules/Counter/Counter.container.js
+###### Counter module
+
+src/modules/Counter/CounterDetail/CounterDetail.container.js
 
 ```javascript
 import { connect } from 'react-redux'
 import { applySpec, path } from 'ramda'
 
-import Component from './Counter.component'
-import { incrementCounter, decrementCounter } from './Counter.reducer'
+import Component from './CounterDetail.component'
+import { incrementCounter, decrementCounter } from '../counter.reducer'
 
 const mapStateToProps = applySpec({
   count: path(['counter', 'count']),
@@ -64,15 +107,15 @@ export default connect(
 )(Component)
 ```
 
-src/modules/Counter/Counter.reducer.test.js
+src/modules/Counter/counter.reducer.test.js
 
 ```javascript
 import SUT, {
   decrementCounter,
   incrementCounter,
-} from './Counter.reducer'
+} from './counter.reducer'
 
-describe('modules/Counter/Counter.reducer', () => {
+describe('modules/Counter/counter.reducer', () => {
   describe('incrementCount', () => {
     it('should increment count by provided amount', () => {
       // given ... count is currently 6
@@ -101,7 +144,7 @@ describe('modules/Counter/Counter.reducer', () => {
 })
 ```
 
-src/modules/Counter/Counter.reducer.js
+src/modules/Counter/counter.reducer.js
 
 ```javascript
 import { createReducer } from '@reduxjs/toolkit'

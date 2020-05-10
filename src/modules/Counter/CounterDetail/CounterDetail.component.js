@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import './Counter.css'
+import './CounterDetail.css'
 
 const Component = ({ onIncrement, onDecrement, count }) => (
-  <div className="Counter">
-    <header className="Counter__heading">
+  <div className="CounterDetail">
+    <header className="CounterDetail__heading">
       Counter
     </header>
-    <main className="Counter__main">
+    <main className="CounterDetail__main">
       {count}
       <button
         type="button"

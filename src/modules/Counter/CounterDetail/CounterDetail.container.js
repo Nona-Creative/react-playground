@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import { applySpec, path } from 'ramda'
 
-import Component from './Counter.component'
-import { incrementCounter, decrementCounter } from './Counter.reducer'
+import Component from './CounterDetail.component'
+import { incrementCounter, decrementCounter } from '../counter.reducer'
 
 const mapStateToProps = applySpec({
   count: path(['counter', 'count']),

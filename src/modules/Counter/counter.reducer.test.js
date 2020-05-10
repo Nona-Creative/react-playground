@@ -1,9 +1,9 @@
 import SUT, {
   decrementCounter,
   incrementCounter,
-} from './Counter.reducer'
+} from './counter.reducer'
 
-describe('modules/Counter/Counter.reducer', () => {
+describe('modules/Counter/counter.reducer', () => {
   describe('incrementCount', () => {
     it('should increment count by provided amount', () => {
       // given ... count is currently 6

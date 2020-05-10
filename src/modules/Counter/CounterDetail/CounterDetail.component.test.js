@@ -2,9 +2,9 @@ import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import sinon from 'sinon'
 
-import Counter from './Counter.component'
+import Counter from './CounterDetail.component'
 
-describe('modules/Counter/Counter.component', () => {
+describe('modules/Counter/CounterDetail/CounterDetail.component', () => {
   let sandbox = null
 
   beforeEach(() => {
