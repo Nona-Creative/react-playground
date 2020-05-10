@@ -14,7 +14,7 @@ src/index.js
 
 ##### App Component
 
-src/modules/App/App.js
+src/modules/App/App.component.js
 
 {lang=javascript}  
 <<[](../src/modules/App/App.component.js)
