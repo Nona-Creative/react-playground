@@ -1,4 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit'
+import { evolve, subtract, add, __ } from 'ramda'
 
 //---------------------------------
 // actions
@@ -14,15 +15,21 @@ export const decrementCounter = amount => ({ type: DECREMENT_COUNTER, payload: a
 // reducers
 //---------------------------------
 
-const incrementCount = (state, { payload }) => state + payload
+const incrementCount = (state, { payload }) => evolve({
+  count: add(__, payload),
+}, state)
 
-const decrementCount = (state, { payload }) => state - payload
+const decrementCount = (state, { payload }) => evolve({
+  count: subtract(__, payload),
+}, state)
 
 //---------------------------------
 // reducer
 //---------------------------------
 
-export const INITIAL_STATE = 0
+export const INITIAL_STATE = {
+  count: 0,
+}
 
 const counterReducer = createReducer(INITIAL_STATE, {
   [INCREMENT_COUNTER]: incrementCount,

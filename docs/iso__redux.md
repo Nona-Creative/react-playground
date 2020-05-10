@@ -44,13 +44,13 @@ src/modules/Counter/Counter.container.js
 
 ```javascript
 import { connect } from 'react-redux'
-import { applySpec, prop } from 'ramda'
+import { applySpec, path } from 'ramda'
 
 import Component from './Counter.component'
 import { incrementCounter, decrementCounter } from './Counter.reducer'
 
 const mapStateToProps = applySpec({
-  count: prop('counter'),
+  count: path(['counter', 'count']),
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -76,26 +76,26 @@ describe('modules/Counter/Counter.reducer', () => {
   describe('incrementCount', () => {
     it('should increment count by provided amount', () => {
       // given ... count is currently 6
-      const state = 6
+      const state = { count: 6 }
 
       // when ... we increment by 3
       const result = SUT(state, incrementCounter(3))
 
       // then ... should update count to 9
-      expect(result).toEqual(9)
+      expect(result).toEqual({ count: 9 })
     })
   })
 
   describe('decrementCount', () => {
     it('should decrement count by provided amount', () => {
       // given ... count is currently 6
-      const state = 6
+      const state = { count: 6 }
 
       // when ... we decrement counter by 5
       const result = SUT(state, decrementCounter(5))
 
       // then ... should update count to 5
-      expect(result).toEqual(1)
+      expect(result).toEqual({ count: 1 })
     })
   })
 })
@@ -105,6 +105,7 @@ src/modules/Counter/Counter.reducer.js
 
 ```javascript
 import { createReducer } from '@reduxjs/toolkit'
+import { evolve, subtract, add, __ } from 'ramda'
 
 //---------------------------------
 // actions
@@ -120,15 +121,21 @@ export const decrementCounter = amount => ({ type: DECREMENT_COUNTER, payload: a
 // reducers
 //---------------------------------
 
-const incrementCount = (state, { payload }) => state + payload
+const incrementCount = (state, { payload }) => evolve({
+  count: add(__, payload),
+}, state)
 
-const decrementCount = (state, { payload }) => state - payload
+const decrementCount = (state, { payload }) => evolve({
+  count: subtract(__, payload),
+}, state)
 
 //---------------------------------
 // reducer
 //---------------------------------
 
-export const INITIAL_STATE = 0
+export const INITIAL_STATE = {
+  count: 0,
+}
 
 const counterReducer = createReducer(INITIAL_STATE, {
   [INCREMENT_COUNTER]: incrementCount,

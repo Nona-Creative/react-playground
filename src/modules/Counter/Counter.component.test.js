@@ -19,12 +19,12 @@ describe('modules/Counter/Counter.component', () => {
     it('should render successfully', () => {
       const onIncrementStub = sandbox.stub()
       const onDecrementStub = sandbox.stub()
-      render(
+      render((
         <Counter
           onIncrement={onIncrementStub}
           onDecrement={onDecrementStub}
-        />,
-      )
+        />
+      ))
     })
   })
 
