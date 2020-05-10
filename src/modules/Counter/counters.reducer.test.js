@@ -3,9 +3,9 @@ import SUT, {
   incrementCounter,
 } from './counters.reducer'
 
-describe('modules/Counter/counter.reducer', () => {
-  describe('incrementCount', () => {
-    it('should increment count by provided amount', () => {
+describe('modules/Counter/counters.reducer', () => {
+  describe('incrementCounter', () => {
+    it('should increment counter count by provided amount', () => {
       // given ... counter 2 currently has a count of 6
       const state = {
         1: { count: 0 },
@@ -29,8 +29,8 @@ describe('modules/Counter/counter.reducer', () => {
     })
   })
 
-  describe('decrementCount', () => {
-    it('should decrement count by provided amount', () => {
+  describe('decrementCounter', () => {
+    it('should decrement counter count by provided amount', () => {
       // given ... counter 3 currently has a count of 6
       const state = {
         1: { count: 0 },

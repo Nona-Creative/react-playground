@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { isNil, or } from 'ramda'
 
 import './CounterDetail.css'
 
-const Component = ({ onIncrement, onDecrement, count }) => {
+const Component = ({ onIncrement, onDecrement, counterId, count, label }) => {
   const noSelectedCounterView = (
     <div>...</div>
   )
@@ -15,13 +16,13 @@ const Component = ({ onIncrement, onDecrement, count }) => {
         type="button"
         className="button button__decrement"
         data-testid="button-decrement"
-        onClick={() => onDecrement(1)}
+        onClick={() => onDecrement(counterId, 1)}
       >-</button>
       <button
         type="button"
         className="button button__increment"
         data-testid="button-increment"
-        onClick={() => onIncrement(1)}
+        onClick={() => onIncrement(counterId, 1)}
       >+</button>
     </>
   )
@@ -29,10 +30,10 @@ const Component = ({ onIncrement, onDecrement, count }) => {
   return (
     <div className="CounterDetail">
       <header className="CounterDetail__heading">
-        Counter
+        {label}
       </header>
       <main className="CounterDetail__main">
-        {count === null ? noSelectedCounterView : selectedCounterView}
+        {or(isNil(counterId), isNil(count)) ? noSelectedCounterView : selectedCounterView}
       </main>
     </div>
   )
@@ -41,11 +42,15 @@ const Component = ({ onIncrement, onDecrement, count }) => {
 Component.propTypes = {
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired,
+  counterId: PropTypes.number,
   count: PropTypes.number,
+  label: PropTypes.string,
 }
 
 Component.defaultProps = {
+  counterId: null,
   count: null,
+  label: '',
 }
 
 export default Component

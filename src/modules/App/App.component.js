@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './App.css'
-import { CounterDetail } from '../Counter'
+import { CounterList, CounterDetail } from '../Counter'
 
 const Component = () => (
   <div className="App">
@@ -9,6 +9,7 @@ const Component = () => (
       REACT Playground
     </header>
     <main className="App__main">
+      <CounterList />
       <CounterDetail />
     </main>
   </div>

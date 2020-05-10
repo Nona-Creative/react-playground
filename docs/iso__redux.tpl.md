@@ -6,7 +6,7 @@ Design
 
 ### feature module structure
 
-> goal is a structure that allows as much decoupling between feature modules as possible
+> Goal is a structure that allows as much decoupling between feature modules as possible
 
 ```text
 +-- modules
@@ -16,25 +16,25 @@ Design
         +-- CounterSummary ... summary view (used in list view)
         +-- Counters ... list view
         +-- ... common files
+        +-- ... redux files
 ```
 
 ### Redux state
 
-> goal is a files structure that allows as much decoupling between feature modules as possible
-> and filenames that correspond to state tree
+> On top of feature module goals stated above, goal is also Redux reducer filenames that correspond to the Redux state tree
 
 tree
 ```text
+ - counters : { [id]: { label, count } }
  - selectedCounter : id
- - counters : { [id]: { count } }
 ```
 
 files
 ```text
 +-- modules
     +-- Counter
-        +-- selectedCounter.reducer.js
         +-- counters.reducer.js
+        +-- selectedCounter.reducer.js
 ```
 
 Code
@@ -68,6 +68,11 @@ import store from './store'
 
 ###### Counter module
 
+src/modules/Counter/CounterList/CounterList.container.js
+
+{lang=javascript}
+<<[](../src/modules/Counter/CounterList/CounterList.container.js)
+
 src/modules/Counter/CounterDetail/CounterDetail.container.js
 
 {lang=javascript}
@@ -82,3 +87,13 @@ src/modules/Counter/counters.reducer.js
 
 {lang=javascript}
 <<[](../src/modules/Counter/counters.reducer.js)
+
+src/modules/Counter/selectedCounter.reducer.test.js
+
+{lang=javascript}
+<<[](../src/modules/Counter/selectedCounter.reducer.test.js)
+
+src/modules/Counter/selectedCounter.reducer.js
+
+{lang=javascript}
+<<[](../src/modules/Counter/selectedCounter.reducer.js)

@@ -23,6 +23,7 @@ describe('modules/Counter/CounterDetail/CounterDetail.component', () => {
         <Counter
           onIncrement={onIncrementStub}
           onDecrement={onDecrementStub}
+          counterId={333}
           count={2}
         />
       ))
@@ -50,6 +51,7 @@ describe('modules/Counter/CounterDetail/CounterDetail.component', () => {
         <Counter
           onIncrement={onIncrementStub}
           onDecrement={onDecrementStub}
+          counterId={333}
           count={2}
         />,
       )
@@ -58,19 +60,19 @@ describe('modules/Counter/CounterDetail/CounterDetail.component', () => {
       const incrementButton = getByTestId('button-increment')
       fireEvent.click(incrementButton)
 
-      // then ... should have called increment handler with the expected amount
+      // then ... should have called increment handler with the expected id and amount
       sinon.assert.notCalled(onDecrementStub)
       sinon.assert.calledOnce(onIncrementStub)
-      sinon.assert.calledWithExactly(onIncrementStub, 1)
+      sinon.assert.calledWithExactly(onIncrementStub, 333, 1)
 
       // when ... we click the decrement button
       const decrementButton = getByTestId('button-decrement')
       fireEvent.click(decrementButton)
 
-      // then ... should have called decrement handler with the expected amount
+      // then ... should have called decrement handler with the expected id and amount
       sinon.assert.calledOnce(onIncrementStub)
       sinon.assert.calledOnce(onDecrementStub)
-      sinon.assert.calledWithExactly(onDecrementStub, 1)
+      sinon.assert.calledWithExactly(onDecrementStub, 333, 1)
     })
   })
 })

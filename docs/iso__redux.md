@@ -4,7 +4,7 @@
 
 ### feature module structure
 
-> goal is a structure that allows as much decoupling between feature modules as possible
+> Goal is a structure that allows as much decoupling between feature modules as possible
 
 ```text
 +-- modules
@@ -14,18 +14,18 @@
         +-- CounterSummary ... summary view (used in list view)
         +-- Counters ... list view
         +-- ... common files
+        +-- ... redux files
 ```
 
 ### Redux state
 
-> goal is a files structure that allows as much decoupling between feature modules as possible
-> and filenames that correspond to state tree
+> On top of feature module goals stated above, goal is also Redux reducer filenames that correspond to the Redux state tree
 
 tree
 
 ```text
+ - counters : { [id]: { label, count } }
  - selectedCounter : id
- - counters : { [id]: { count } }
 ```
 
 files
@@ -33,8 +33,8 @@ files
 ```text
 +-- modules
     +-- Counter
-        +-- selectedCounter.reducer.js
         +-- counters.reducer.js
+        +-- selectedCounter.reducer.js
 ```
 
 ## Code
@@ -58,9 +58,15 @@ src/common/redux/reducers.js
 ```javascript
 import { combineReducers } from 'redux'
 
-import { counters } from '../../modules/Counter'
+import {
+  counters,
+  selectedCounter,
+} from '../../modules/Counter'
 
-export default combineReducers({ counters })
+export default combineReducers({
+  counters,
+  selectedCounter,
+})
 ```
 
 ###### React changes
@@ -83,24 +89,56 @@ ReactDOM.render(
 
 ###### Counter module
 
+src/modules/Counter/CounterList/CounterList.container.js
+
+```javascript
+import { connect } from 'react-redux'
+import { pipe, pick, evolve } from 'ramda'
+
+import { denormalize } from '../../../common/utils/data'
+import { selectCounter } from '../selectedCounter.reducer'
+import Component from './CounterList.component'
+
+const mapStateToProps = pipe(
+  pick(['counters']),
+  evolve({
+    counters: denormalize('id'),
+  }),
+)
+
+const mapDispatchToProps = dispatch => ({
+  onSelectCounter: id => dispatch(selectCounter(id)),
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Component)
+```
+
 src/modules/Counter/CounterDetail/CounterDetail.container.js
 
 ```javascript
 import { connect } from 'react-redux'
-import { prop, pathOr } from 'ramda'
+import { prop, path } from 'ramda'
 
 import Component from './CounterDetail.component'
 import { incrementCounter, decrementCounter } from '../counters.reducer'
 
 const mapStateToProps = (state) => {
   const selectedCounter = prop('selectedCounter', state)
-  const count = pathOr(null, ['counters', selectedCounter, 'count'], state)
-  return { count }
+  const count = path(['counters', selectedCounter, 'count'], state)
+  const label = path(['counters', selectedCounter, 'label'], state)
+  return {
+    counterId: selectedCounter,
+    count,
+    label,
+  }
 }
 
 const mapDispatchToProps = dispatch => ({
-  onIncrement: n => dispatch(incrementCounter(n)),
-  onDecrement: n => dispatch(decrementCounter(n)),
+  onIncrement: (counterId, amount) => dispatch(incrementCounter(counterId, amount)),
+  onDecrement: (counterId, amount) => dispatch(decrementCounter(counterId, amount)),
 })
 
 export default connect(
@@ -117,9 +155,9 @@ import SUT, {
   incrementCounter,
 } from './counters.reducer'
 
-describe('modules/Counter/counter.reducer', () => {
-  describe('incrementCount', () => {
-    it('should increment count by provided amount', () => {
+describe('modules/Counter/counters.reducer', () => {
+  describe('incrementCounter', () => {
+    it('should increment counter count by provided amount', () => {
       // given ... counter 2 currently has a count of 6
       const state = {
         1: { count: 0 },
@@ -143,8 +181,8 @@ describe('modules/Counter/counter.reducer', () => {
     })
   })
 
-  describe('decrementCount', () => {
-    it('should decrement count by provided amount', () => {
+  describe('decrementCounter', () => {
+    it('should decrement counter count by provided amount', () => {
       // given ... counter 3 currently has a count of 6
       const state = {
         1: { count: 0 },
@@ -179,10 +217,10 @@ import { subtract, add, __, lensPath, over } from 'ramda'
 // actions
 //---------------------------------
 
-export const INCREMENT_COUNTER = '[counter] increment-counter'
+export const INCREMENT_COUNTER = '[counter] increment'
 export const incrementCounter = (id, amount) => ({ type: INCREMENT_COUNTER, payload: { id, amount } })
 
-export const DECREMENT_COUNTER = '[counter] decrement-counter'
+export const DECREMENT_COUNTER = '[counter] decrement'
 export const decrementCounter = (id, amount) => ({ type: DECREMENT_COUNTER, payload: { id, amount } })
 
 //---------------------------------
@@ -203,13 +241,75 @@ const decrementCount = (state, { payload }) => {
 // reducer
 //---------------------------------
 
-export const INITIAL_STATE = {}
+export const INITIAL_STATE = {
+  1: { label: 'COUNTER 1', count: 5 },
+  2: { label: 'COUNTER 2', count: 10 },
+  3: { label: 'COUNTER 3', count: 15 },
+}
 
-const countersReducer = createReducer(INITIAL_STATE, {
+const reducer = createReducer(INITIAL_STATE, {
   [INCREMENT_COUNTER]: incrementCount,
   [DECREMENT_COUNTER]: decrementCount,
 })
 
-export default countersReducer
+export default reducer
+```
+
+src/modules/Counter/selectedCounter.reducer.test.js
+
+```javascript
+import SUT, {
+  selectCounter,
+} from './selectedCounter.reducer'
+
+describe('modules/Counter/selectedCounter.reducer', () => {
+  describe('selectCounter', () => {
+    it('should set selected counter to the provided id', () => {
+      // given ... no counter is currently selected
+      const state = null
+
+      // when ... we select counter 3
+      const action = selectCounter('3')
+      const result = SUT(state, action)
+
+      // then ... should set selected counter to 3
+      expect(result).toEqual(3)
+    })
+  })
+})
+```
+
+src/modules/Counter/selectedCounter.reducer.js
+
+```javascript
+import { createReducer } from '@reduxjs/toolkit'
+
+//---------------------------------
+// actions
+//---------------------------------
+
+export const SELECT_COUNTER = '[counter] select'
+export const selectCounter = id => ({ type: SELECT_COUNTER, payload: { id } })
+
+//---------------------------------
+// reducers
+//---------------------------------
+
+const setSelectedCounter = (state, { payload }) => {
+  const { id } = payload
+  return parseInt(id, 10)
+}
+
+//---------------------------------
+// reducer
+//---------------------------------
+
+export const INITIAL_STATE = null
+
+const reducer = createReducer(INITIAL_STATE, {
+  [SELECT_COUNTER]: setSelectedCounter,
+})
+
+export default reducer
 ```
 
