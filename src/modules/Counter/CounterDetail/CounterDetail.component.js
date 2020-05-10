@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 
 import './CounterDetail.css'
 
-const Component = ({ onIncrement, onDecrement, count }) => (
-  <div className="CounterDetail">
-    <header className="CounterDetail__heading">
-      Counter
-    </header>
-    <main className="CounterDetail__main">
+const Component = ({ onIncrement, onDecrement, count }) => {
+  const noSelectedCounterView = (
+    <div>...</div>
+  )
+
+  const selectedCounterView = (
+    <>
       {count}
       <button
         type="button"
@@ -22,9 +23,20 @@ const Component = ({ onIncrement, onDecrement, count }) => (
         data-testid="button-increment"
         onClick={() => onIncrement(1)}
       >+</button>
-    </main>
-  </div>
-)
+    </>
+  )
+
+  return (
+    <div className="CounterDetail">
+      <header className="CounterDetail__heading">
+        Counter
+      </header>
+      <main className="CounterDetail__main">
+        {count === null ? noSelectedCounterView : selectedCounterView}
+      </main>
+    </div>
+  )
+}
 
 Component.propTypes = {
   onIncrement: PropTypes.func.isRequired,
@@ -33,7 +45,7 @@ Component.propTypes = {
 }
 
 Component.defaultProps = {
-  count: 0,
+  count: null,
 }
 
 export default Component

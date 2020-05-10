@@ -16,7 +16,20 @@ describe('modules/Counter/CounterDetail/CounterDetail.component', () => {
   })
 
   describe('render', () => {
-    it('should render successfully', () => {
+    it('should render successfully with all optional props', () => {
+      const onIncrementStub = sandbox.stub()
+      const onDecrementStub = sandbox.stub()
+      render((
+        <Counter
+          onIncrement={onIncrementStub}
+          onDecrement={onDecrementStub}
+          count={2}
+        />
+      ))
+      // TODO: test count and buttons are rendered
+    })
+
+    it('should render successfully with no optional props', () => {
       const onIncrementStub = sandbox.stub()
       const onDecrementStub = sandbox.stub()
       render((
@@ -25,6 +38,7 @@ describe('modules/Counter/CounterDetail/CounterDetail.component', () => {
           onDecrement={onDecrementStub}
         />
       ))
+      // TODO: test "no selected counter" view is rendered
     })
   })
 
@@ -36,6 +50,7 @@ describe('modules/Counter/CounterDetail/CounterDetail.component', () => {
         <Counter
           onIncrement={onIncrementStub}
           onDecrement={onDecrementStub}
+          count={2}
         />,
       )
 

@@ -73,12 +73,12 @@ src/modules/Counter/CounterDetail/CounterDetail.container.js
 {lang=javascript}
 <<[](../src/modules/Counter/CounterDetail/CounterDetail.container.js)
 
-src/modules/Counter/counter.reducer.test.js
+src/modules/Counter/selectedCounter.reducer.test.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/counter.reducer.test.js)
+<<[](../src/modules/Counter/selectedCounter.reducer.test.js)
 
-src/modules/Counter/counter.reducer.js
+src/modules/Counter/selectedCounter.reducer.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/counter.reducer.js)
+<<[](../src/modules/Counter/counters.reducer.js)

@@ -1,7 +1,7 @@
 import CounterDetail from './CounterDetail/CounterDetail.container'
-import counter from './counter.reducer'
+import counters from './counters.reducer'
 
 export {
-  counter,
   CounterDetail,
+  counters,
 }
