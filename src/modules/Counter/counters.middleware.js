@@ -1,4 +1,3 @@
-import { APP_INIT } from '../App/app.reducer'
 import {
   API_GET_COUNTERS,
   API_GET_COUNTERS_SUCCESS,
@@ -14,7 +13,7 @@ import {
 // ... on App initialization
 //---------------------------------
 
-export const countersInitFlow = ({ dispatch }) => next => action => {
+export const countersInitFlow = ({ APP_INIT }) => ({ dispatch }) => next => action => {
   next(action)
 
   const { type } = action
@@ -30,7 +29,7 @@ export const countersInitFlow = ({ dispatch }) => next => action => {
 // ... or fails with the received error message
 //---------------------------------
 
-export const apiGetCountersFlow = API => ({ dispatch }) => next => action => {
+export const apiGetCountersFlow = ({ API }) => ({ dispatch }) => next => action => {
   next(action)
 
   const { type } = action

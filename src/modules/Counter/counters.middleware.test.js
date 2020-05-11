@@ -1,7 +1,6 @@
 import sinon from 'sinon'
 import Bluebird from 'bluebird'
 
-import { appInit } from '../App/app.reducer'
 import {
   apiGetCounters,
   apiGetCountersSuccess,
@@ -28,8 +27,9 @@ describe('modules/Counter/counters.reducer', () => {
       const nextStub = sandbox.stub()
 
       // when ... the App initializes
-      const action = appInit()
-      const middleware = SUT.countersInitFlow
+      const APP_INIT = '[app] init'
+      const action = { type: APP_INIT }
+      const middleware = SUT.countersInitFlow({ APP_INIT })
       middleware(store)(nextStub)(action)
 
       // then ... should start the API get counters flow
@@ -51,7 +51,7 @@ describe('modules/Counter/counters.reducer', () => {
 
       // when ... we get counters from the API
       const action = apiGetCounters()
-      const middleware = SUT.apiGetCountersFlow(apiStub)
+      const middleware = SUT.apiGetCountersFlow({ API: apiStub })
       middleware(store)(nextStub)(action)
 
       await Bluebird.delay(10)
@@ -74,7 +74,7 @@ describe('modules/Counter/counters.reducer', () => {
 
       // when ... we get counters from the API
       const action = apiGetCounters()
-      const middleware = SUT.apiGetCountersFlow(apiStub)
+      const middleware = SUT.apiGetCountersFlow({ API: apiStub })
       middleware(store)(nextStub)(action)
 
       await Bluebird.delay(10)

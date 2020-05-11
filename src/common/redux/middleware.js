@@ -1,4 +1,5 @@
 import API from '../api'
+import { APP_INIT } from '../../modules/App'
 
 import {
   countersInitFlow,
@@ -7,7 +8,7 @@ import {
 } from '../../modules/Counter'
 
 export default [
-  countersInitFlow,
-  apiGetCountersFlow(API),
+  countersInitFlow({ APP_INIT }),
+  apiGetCountersFlow({ API }),
   setCountersFlow,
 ]
