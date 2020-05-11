@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import './index.css'
 import store from './common/redux/store'
 import App from './modules/App'
+import { appInit } from './modules/App/app.reducer'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
@@ -20,3 +21,6 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister()
+
+// initial actions
+store.dispatch(appInit())

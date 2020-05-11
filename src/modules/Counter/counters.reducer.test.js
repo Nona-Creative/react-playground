@@ -1,6 +1,7 @@
 import SUT, {
   decrementCounter,
   incrementCounter,
+  setCounters,
 } from './counters.reducer'
 
 describe('modules/Counter/counters.reducer', () => {
@@ -49,6 +50,29 @@ describe('modules/Counter/counters.reducer', () => {
         1: { count: 0 },
         2: { count: 0 },
         3: { count: 5 },
+      })
+    })
+  })
+
+  describe('overwriteCounters', () => {
+    it('should overwrite counters using provided list of counters', () => {
+      // given ... no existing counters
+      const state = {}
+
+      // when ... we set counters from the following list of counters
+      const counters = [
+        { id: 1, label: 'COUNTER 1', count: 5 },
+        { id: 2, label: 'COUNTER 2', count: 10 },
+        { id: 3, label: 'COUNTER 3', count: 15 },
+      ]
+      const action = setCounters(counters)
+      const result = SUT(state, action)
+
+      // then ... should normalize and set counters as expected
+      expect(result).toEqual({
+        1: { label: 'COUNTER 1', count: 5 },
+        2: { label: 'COUNTER 2', count: 10 },
+        3: { label: 'COUNTER 3', count: 15 },
       })
     })
   })
