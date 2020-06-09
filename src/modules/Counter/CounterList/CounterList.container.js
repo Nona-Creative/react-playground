@@ -1,16 +1,10 @@
 import { connect } from 'react-redux'
-import { pipe, pick, evolve } from 'ramda'
 
-import { denormalize } from '../../../common/utils/data'
 import { selectCounter } from '../selectedCounter.reducer'
 import Component from './CounterList.component'
+import { CounterListComponentSelector } from './CounterList.selectors'
 
-const mapStateToProps = pipe(
-  pick(['counters']),
-  evolve({
-    counters: denormalize('id'),
-  }),
-)
+const mapStateToProps = CounterListComponentSelector
 
 const mapDispatchToProps = dispatch => ({
   onSelectCounter: id => dispatch(selectCounter(id)),
