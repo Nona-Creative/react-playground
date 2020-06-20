@@ -4,6 +4,7 @@
   "lerna:update": "Update Lerna",
   "publish": "Publish new version (through Lerna)",
   "init": "Initialize project (including all packages)",
+  "npm:audit": "audit NPM dependencies of all packages for critical vulnerabilities",
   "start": "serve all packages locally",
   "start:build": "rebuild and serve all packages locally",
   "serve": "serve React app package locally",

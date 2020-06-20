@@ -15,6 +15,7 @@
   "homepage": "./",
   "scripts": {
     "serve": "nodemon src/index.js",
+    "npm:audit": "audit-ci --critical",
     "help": "package-json-help.js",
     "init": "cp -n .env.tpl .env || true"
   },
@@ -24,6 +25,7 @@
     "ramda": "^0.27.0"
   },
   "devDependencies": {
+    "audit": "npm:audit@0.0.6",
     "cors": "^2.8.5",
     "nodemon": "^2.0.2"
   }
