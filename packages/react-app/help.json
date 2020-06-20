@@ -1,0 +1,14 @@
+{
+  "init": "initialize package",
+  "serve": "serve project",
+  "test": "run all unit tests",
+  "test:watch": "run all unit tests (in watch mode)",
+  "test:comp": "run all component tests",
+  "test:comp:watch": "run all component tests (in watch mode)",
+  "lint": "run JS linter",
+  "test:all": "run all tests",
+  "docs:gen": "generate doc markdown template file for this branch",
+  "docs:render": "render doc markdown file for this branch (from template file)",
+  "npm:audit": "audit npm dependencies for critical vulnerabilities",
+  "ci:validate": "validate CircleCI config"
+}

@@ -1,0 +1,38 @@
+version: 2
+
+# --------------------------------
+# common : base
+# --------------------------------
+
+base_node: &base_node
+  docker:
+    - image: circleci/node:8.10.0-browsers
+
+# --------------------------------
+# common : steps
+# --------------------------------
+
+step_say_hello: &step_say_hello
+  name: 'Say Hello'
+    command: echo "HELLO"
+
+# --------------------------------
+# jobs
+# --------------------------------
+
+jobs:
+  branch-job:
+    <<: *base_node
+    steps:
+      - checkout
+      - run: *step_say_hello
+
+# --------------------------------
+# workflows
+# --------------------------------
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - branch-job

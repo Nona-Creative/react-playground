@@ -1,0 +1,30 @@
+{
+  "name": "@react-playground/api",
+  "description": "An API for React playground React App",
+  "keywords": [
+    "API",
+    "express",
+    "javascript"
+  ],
+  "version": "0.0.1",
+  "author": "NoNa Creative <hello@nona.digital>",
+  "contributors": [
+    "Neil Russell <neilrussell6@gmail.com>"
+  ],
+  "private": true,
+  "homepage": "./",
+  "scripts": {
+    "serve": "nodemon src/index.js",
+    "help": "package-json-help.js",
+    "init": "cp -n .env.tpl .env || true"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "express": "^4.17.1",
+    "ramda": "^0.27.0"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "nodemon": "^2.0.2"
+  }
+}
