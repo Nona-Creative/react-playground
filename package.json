@@ -27,6 +27,7 @@
     "help": "packages-json-help.js"
   },
   "devDependencies": {
+    "audit-ci": "^3.0.1",
     "husky": "^4.2.5",
     "lerna": "^3.21.0",
     "lerna-update-wizard": "^0.17.8",

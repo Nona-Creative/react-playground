@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "audit": "npm:audit@0.0.6",
+    "audit-ci": "^3.0.1",
     "cors": "^2.8.5",
     "nodemon": "^2.0.2"
   }
