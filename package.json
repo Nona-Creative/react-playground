@@ -5,19 +5,19 @@
   "private": true,
   "homepage": "./",
   "scripts": {
-    "npm:audit": "npm run _npm:audit:spec",
-    "_npm:audit:spec": "audit-ci --critical",
-    "ci:validate": "circleci config validate",
-    "help": "package-json-help.js",
     "start": "react-scripts start",
     "_build": "react-scripts build",
     "test": "CI=true react-scripts test",
-    "test:coverage": "react-scripts test --coverage",
     "test:watch": "react-scripts test --env=jsdom --watchAll",
-    "lint:js": "eslint --ext .js --ignore-path .gitignore .",
     "_eject": "react-scripts eject",
-    "_git:pre-commit": "npm-run-all lint:js ci:validate",
-    "_git:pre-push": "npm-run-all lint:js test:coverage ci:validate"
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "npm:audit": "npm run _npm:audit:spec",
+    "_npm:audit:spec": "audit-ci --critical",
+    "ci:validate": "circleci config validate",
+    "_git:pre-commit": "npm-run-all lint ci:validate",
+    "_git:pre-push": "npm-run-all lint ci:validate",
+    "help": "package-json-help.js",
+    "init": "npm i && git checkout iso__base && npm i"
   },
   "husky": {
     "hooks": {

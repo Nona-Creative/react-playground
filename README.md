@@ -1,7 +1,16 @@
 React Playground
 ===
 
-> A minimal React project for experimenting and refining templates / deployment pipelines
+> React Playground showcase
+
+> NOTE: master & develop are not the base branches for development, please checkout ``iso__base``
+
+
+Quick Start (Playground development)
+---
+
+ 1. ``npm run init`` initialize the projechecks out base development branch ``iso__base``ct ()
+
 
 Available commands
 --- 
@@ -11,23 +20,12 @@ to see a list of available commands run:
 npm run help
 ```
 
-to see a list of available Make commands run:
-```bash
-make
-```
-
-Quick Start
----
-
- 1. go through everything in [Prerequisites](docs/prerequisites.md)
- 2. ``npm i`` install NPM dependencies
- 3. ``npm run init`` initialize the project (creates local env files)
- 4. ``npm run start`` start react app in your browser
 
 Contributing
 ---
 
 Before contributing please read through everything in [Contributing](docs/contributing.md)
+
 
 Testing
 ---
