@@ -12,19 +12,6 @@ base_node: &base_node
 # common : steps
 # --------------------------------
 
-step_cache_restore_npm: &step_cache_restore_npm
-  name: 'Restore Cache: NPM Dependencies'
-  keys:
-    - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-    - node-v1-{{ .Branch }}-
-    - node-v1-
-
-step_cache_save_npm: &step_cache_save_npm
-  name: 'Save Cache: NPM Dependencies'
-  paths:
-    - ~/usr/local/lib/node_modules # location depends on npm version
-  key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-
 step_run_node_env_info: &step_run_node_env_info
   name: 'Print Environment Info'
   command: |
@@ -66,10 +53,8 @@ jobs:
     steps:
       - checkout
       - run: *step_run_update_npm
-      - restore_cache: *step_cache_restore_npm
       - run: *step_run_node_env_info
       - run: *step_run_install_npm_dependencies
-      - save_cache: *step_cache_save_npm
       - run: *step_npm_audit
       - run: *step_lint
       - run: *step_test
