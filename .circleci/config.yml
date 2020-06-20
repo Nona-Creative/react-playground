@@ -37,29 +37,24 @@ step_run_node_env_info: &step_run_node_env_info
 step_run_update_npm: &step_run_update_npm
   name: 'Update NPM To The most recent release'
   shell: /bin/bash
-  command: |
-    sudo npm install -g npm@next
+  command: sudo npm install -g npm@next
 
 step_run_install_npm_dependencies: &step_run_install_npm_dependencies
   name: 'Install NPM Dependencies'
   shell: /bin/bash
-  command: |
-    npm install
+  command: npm install
 
 step_lint: &step_lint
   name: 'Lint'
-  command: |
-    npm run lint
+  command: npm run lint
 
 step_npm_audit: &step_npm_audit
   name: 'Audit NPM Dependencies'
-  command: |
-    npm run npm:audit
+  command: npm run npm:audit
 
 step_test: &step_test
   name: 'Tests'
-  command: |
-    npm run test
+  command: npm run test
 
 # --------------------------------
 # jobs
