@@ -7,7 +7,7 @@ React Playground
 Quick Start
 ---
 
- 1. go through everything in [Prerequisites](docs/prerequisites.md)
+ 1. go through everything in [Prerequisites](docs/common/prerequisites.md)
  2. ``npm run init`` initialize the project (creates local env files and install dependencies)
  3. ``npm run start`` start react app in your browser
 
@@ -29,7 +29,7 @@ make
 Contributing
 ---
 
-Before contributing please read through everything in [Contributing](docs/contributing.md)
+Before contributing please read through everything in [Contributing](docs/common/contributing.md)
 
 
 Testing
@@ -44,16 +44,16 @@ npm run test:watch
 Monorepo
 ---
 
-R[Why is this Playground a Monorepo?](docs/monorepo-why.md)
+R[Why is this Playground a Monorepo?](docs/common/monorepo-why.md)
 
 
 Additional Docs
 ---
 
- 1. [Contributing](docs/contributing.md)
- 2. [Branches](docs/branches.md)
- 3. [ENVs](docs/envs.md)
- 4. [Prerequisites](docs/prerequisites.md)
- 5. [AWS](docs/aws.md)
- 6. [Node Version](docs/node-version.md)
- 7. [Branch Specific Docs](docs/branches-docs.md)
+ 1. [Contributing](docs/common/contributing.md)
+ 2. [Branches](docs/common/branches.md)
+ 3. [ENVs](docs/common/envs.md)
+ 4. [Prerequisites](docs/common/prerequisites.md)
+ 5. [AWS](docs/common/aws.md)
+ 6. [Node Version](docs/common/node-version.md)
+ 7. [Branch Specific Docs](docs/common/branches-docs.md)
