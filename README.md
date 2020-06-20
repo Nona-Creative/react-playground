@@ -4,6 +4,14 @@ React Playground
 > A minimal React project for experimenting and refining templates / deployment pipelines
 
 
+Quick Start
+---
+
+ 1. go through everything in [Prerequisites](docs/prerequisites.md)
+ 2. ``npm run init`` initialize the project (creates local env files and install dependencies)
+ 3. ``npm run start`` start react app in your browser
+
+
 Available commands
 --- 
 
@@ -16,14 +24,6 @@ to see a list of available Make commands run:
 ```bash
 make
 ```
-
-
-Quick Start
----
-
- 1. go through everything in [Prerequisites](docs/prerequisites.md)
- 2. ``npm run init`` initialize the project (creates local env files and install dependencies)
- 3. ``npm run start`` start react app in your browser
 
 
 Contributing
@@ -40,6 +40,12 @@ run all unit tests (optionally in watch mode):
 npm run test
 npm run test:watch
 ```
+
+Monorepo
+---
+
+R[Why is this Playground a Monorepo?](docs/monorepo-why.md)
+
 
 Additional Docs
 ---
