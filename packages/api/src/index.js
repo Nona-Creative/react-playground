@@ -5,8 +5,8 @@ const fs = Bluebird.promisifyAll(require('fs'))
 const path = require('path')
 const cors = require('cors')
 
-const PORT = 8000
-const DELAY = 200
+const PORT = process.env.PORT
+const DELAY = process.env.DELAY
 
 const app = express()
 
@@ -49,7 +49,7 @@ const buildResponse = (res, id, data) => {
 }
 
 // ------------------------------------
-// /users
+// /counters
 // ------------------------------------
 
 app.get('/counters', async (req, res) => {
@@ -58,7 +58,7 @@ app.get('/counters', async (req, res) => {
 })
 
 // ------------------------------------
-// /wallets/:id
+// /counters/:id
 // ------------------------------------
 
 app.get('/counters/:id', async (req, res) => {

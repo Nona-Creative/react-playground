@@ -14,7 +14,7 @@
   "private": true,
   "homepage": "./",
   "scripts": {
-    "serve": "nodemon src/index.js",
+    "serve": "dotenv -e .env -- nodemon src/index.js",
     "npm:audit": "audit-ci --critical",
     "help": "package-json-help.js",
     "init": "cp -n .env.tpl .env || true"
@@ -28,6 +28,7 @@
     "audit": "npm:audit@0.0.6",
     "audit-ci": "^3.0.1",
     "cors": "^2.8.5",
+    "dotenv-cli": "^3.1.0",
     "nodemon": "^2.0.2"
   }
 }
