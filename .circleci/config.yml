@@ -26,10 +26,10 @@ step_run_update_npm: &step_run_update_npm
   shell: /bin/bash
   command: sudo npm install -g npm@next
 
-step_run_install_npm_dependencies: &step_run_install_npm_dependencies
-  name: 'Install NPM Dependencies'
+step_run_init: &step_run_init
+  name: 'Initialize'
   shell: /bin/bash
-  command: npm install
+  command: npm run init
 
 step_lint: &step_lint
   name: 'Lint'
@@ -54,7 +54,7 @@ jobs:
       - checkout
       - run: *step_run_update_npm
       - run: *step_run_node_env_info
-      - run: *step_run_install_npm_dependencies
+      - run: *step_run_init
       - run: *step_npm_audit
       - run: *step_lint
       - run: *step_test
