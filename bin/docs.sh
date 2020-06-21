@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+DOCS_RENDER_SCRIPT="bin/docs.js"
+
 # ------------------------------------------------------
 # load envs
 # ------------------------------------------------------
@@ -50,7 +52,7 @@ function render() {
   local DESTINATION_PATH="${SOURCE_PATH/.tpl.md/.md}"
   if [[ -f "${SOURCE_PATH}" ]]; then
     echo "rendering doc: ${DESTINATION_PATH} from template: ${SOURCE_PATH}"
-    node scripts/docs.js render $SOURCE_PATH > $DESTINATION_PATH
+    node $DOCS_RENDER_SCRIPT render $SOURCE_PATH > $DESTINATION_PATH
   fi
 }
 
