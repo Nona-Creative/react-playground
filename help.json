@@ -11,6 +11,7 @@
   "npm:audit": "audit NPM dependencies of all packages for critical vulnerabilities",
   "serve": "serve React app package locally",
   "api:serve": "serve API package locally",
-  "branches": "print all local special branches",
+  "branches:ls": "print all local special branches",
+  "branches:fetch": "fetch all remote special branches",
   "ci:validate": "validate CircleCI config"
 }
