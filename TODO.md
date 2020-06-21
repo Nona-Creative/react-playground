@@ -7,5 +7,4 @@ React Playground :: TODO
 
 ### iso__redux__middleware__custom_async
 
-  - implement API locally
   - create doc
