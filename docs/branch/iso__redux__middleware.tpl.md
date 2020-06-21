@@ -9,4 +9,4 @@ Code
 src/common/redux/store.js
 
 {lang=javascript}
-<<[](../src/common/redux/store.js)
+<<[](../packages/react-app/src/common/redux/store.js)

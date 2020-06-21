@@ -45,14 +45,14 @@ Code
 src/common/redux/store.js
 
 {lang=javascript}
-<<[](../src/common/redux/store.js)
+<<[](../packages/react-app/src/common/redux/store.js)
 
 ###### Root Reducer
 
 src/common/redux/reducers.js
 
 {lang=javascript}
-<<[](../src/common/redux/reducers.js)
+<<[](../packages/react-app/src/common/redux/reducers.js)
 
 ###### React changes
 
@@ -64,36 +64,36 @@ import { Provider } from 'react-redux'
 import store from './store'
 ```
 {lang=javascript,crop-query=(context(.ReactDOM.render,0,4))}
-<<[](../src/index.js)
+<<[](../packages/react-app/src/index.js)
 
 ###### Counter module
 
 src/modules/Counter/CounterList/CounterList.container.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/CounterList/CounterList.container.js)
+<<[](../packages/react-app/src/modules/Counter/CounterList/CounterList.container.js)
 
 src/modules/Counter/CounterDetail/CounterDetail.container.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/CounterDetail/CounterDetail.container.js)
+<<[](../packages/react-app/src/modules/Counter/CounterDetail/CounterDetail.container.js)
 
 src/modules/Counter/counters.reducer.test.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/counters.reducer.test.js)
+<<[](../packages/react-app/src/modules/Counter/counters.reducer.test.js)
 
 src/modules/Counter/counters.reducer.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/counters.reducer.js)
+<<[](../packages/react-app/src/modules/Counter/counters.reducer.js)
 
 src/modules/Counter/selectedCounter.reducer.test.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/selectedCounter.reducer.test.js)
+<<[](../packages/react-app/src/modules/Counter/selectedCounter.reducer.test.js)
 
 src/modules/Counter/selectedCounter.reducer.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/selectedCounter.reducer.js)
+<<[](../packages/react-app/src/modules/Counter/selectedCounter.reducer.js)

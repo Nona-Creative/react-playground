@@ -2,6 +2,7 @@ env:
   browser: true
   es6: true
   mocha: true
+  jest: true
 globals:
   __DEV__: true
 overrides:
@@ -12,6 +13,7 @@ overrides:
       jest: true
 extends:
   - 'airbnb'
+  - 'eslint-config-prettier'
   - 'prettier'
   - 'prettier/react'
 parser: 'babel-eslint'
@@ -46,3 +48,22 @@ rules:
     - extensions:
       - js
       - jsx
+  no-underscore-dangle:
+    - off
+  operator-linebreak:
+    - off
+  no-nested-ternary:
+    - off
+  no-console:
+    - off
+  object-curly-newline:
+    - off
+  no-shadow:
+    - off
+  arrow-parens:
+    - error
+    - as-needed
+    - requireForBlockBody: true
+  arrow-body-style:
+    - error
+    - as-needed

@@ -21,7 +21,7 @@ export const apiGetCountersSuccess = data => ({ type: API_GET_COUNTERS_SUCCESS, 
 export const apiGetCountersFailure = message => ({ type: API_GET_COUNTERS_FAILURE, payload: { message } })
 
 export const SET_COUNTERS = '[counter] set counters'
-export const setCounters = (counters) => ({ type: SET_COUNTERS, payload: { counters } })
+export const setCounters = counters => ({ type: SET_COUNTERS, payload: { counters } })
 
 //---------------------------------
 // reducers
