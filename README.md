@@ -31,6 +31,9 @@ Contributing
 
 Before contributing please read through everything in [Contributing](docs/common/contributing.md)
 
+Then pick something from [TODO](./TODO.md), do it, create a PR onto this branch.
+
+If you have any ideas, but want someone else to implement, update [TODO](./TODO.md) and create PR onto this branch.
 
 Testing
 ---
