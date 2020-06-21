@@ -27,7 +27,7 @@ Code
 src/index.js
 
 {lang=javascript}  
-<<[](../src/index.js)
+<<[](../packages/react-app/src/index.js)
 
 
 ##### App Component
@@ -35,21 +35,21 @@ src/index.js
 src/modules/App/App.component.js
 
 {lang=javascript}  
-<<[](../src/modules/App/App.component.js)
+<<[](../packages/react-app/src/modules/App/App.component.js)
 
 ###### Counter module
 
 src/modules/Counter/CounterSummary/CounterSummary.component.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/CounterSummary/CounterSummary.component.js)
+<<[](../packages/react-app/src/modules/Counter/CounterSummary/CounterSummary.component.js)
 
 src/modules/Counter/CounterList/CounterList.component.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/CounterList/CounterList.component.js)
+<<[](../packages/react-app/src/modules/Counter/CounterList/CounterList.component.js)
 
 src/modules/Counter/CounterDetail/CounterDetail.component.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/CounterDetail/CounterDetail.component.js)
+<<[](../packages/react-app/src/modules/Counter/CounterDetail/CounterDetail.component.js)
