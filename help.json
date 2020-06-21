@@ -1,12 +1,17 @@
 {
+  "init": "initialize project (including all packages)",
+  "ls": "list all packages",
+  "bootstrap": "bootstrap all packages, installing all their dependencies and linking any cross-dependencies",
+  "lerna:update": "update Lerna",
+  "publish": "publish new version (through Lerna)",
+  "test": "run tests for all packages",
+  "lint": "lint all packages",
   "docs:gen": "generate doc markdown template file for this branch",
   "docs:render": "render doc markdown file for this branch (from template file)",
-  "npm:audit": "audit npm dependencies for critical vulnerabilities",
-  "ci:validate": "validate CircleCI config",
-  "lint:js": "run JS linter",
-  "start": "serve project",
-  "test": "run all unit tests",
-  "test:coverage": "run all unit tests with coverage",
-  "test:watch": "run all unit tests in watch mode",
-  "init": "initialize project"
+  "npm:audit": "audit NPM dependencies of all packages for critical vulnerabilities",
+  "start": "serve all packages locally",
+  "start:build": "rebuild and serve all packages locally",
+  "serve": "serve React app package locally",
+  "api:serve": "serve API package locally",
+  "ci:validate": "validate CircleCI config"
 }
