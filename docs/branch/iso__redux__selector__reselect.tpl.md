@@ -39,29 +39,29 @@ Code
 src/modules/Counter/CounterDetail/CounterDetail.selectors.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/CounterDetail/CounterDetail.selectors.js)
+<<[](../packages/react-app/src/modules/Counter/CounterDetail/CounterDetail.selectors.js)
 
 src/modules/Counter/CounterDetail/CounterDetail.selectors.test.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/CounterDetail/CounterDetail.selectors.test.js)
+<<[](../packages/react-app/src/modules/Counter/CounterDetail/CounterDetail.selectors.test.js)
 
 src/modules/Counter/CounterList/CounterList.selectors.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/CounterList/CounterList.selectors.js)
+<<[](../packages/react-app/src/modules/Counter/CounterList/CounterList.selectors.js)
 
 src/modules/Counter/CounterList/CounterList.selector.test.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/CounterList/CounterList.selectors.test.js)
+<<[](../packages/react-app/src/modules/Counter/CounterList/CounterList.selectors.test.js)
 
 src/modules/Counter/counters.selectors.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/counters.selectors.js)
+<<[](../packages/react-app/src/modules/Counter/counters.selectors.js)
 
 src/modules/Counter/counters.selectors.test.js
 
 {lang=javascript}
-<<[](../src/modules/Counter/counters.selectors.test.js)
+<<[](../packages/react-app/src/modules/Counter/counters.selectors.test.js)
