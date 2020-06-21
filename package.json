@@ -12,8 +12,6 @@
     "lint": "lerna run lint --stream --concurrency=1 -- --colors",
     "serve": "npm run serve --prefix ./packages/react-app",
     "api:serve": "npm run serve --prefix ./packages/api",
-    "start": "npm run start --prefix ./packages/delivery-local",
-    "start:build": "npm run start:build --prefix ./packages/delivery-local",
     "_npm:audit:packages": "lerna run npm:audit --concurrency 1 --stream",
     "_npm:audit": "audit-ci --critical",
     "npm:audit": "npm-run-all _npm:audit _npm:audit:packages",
