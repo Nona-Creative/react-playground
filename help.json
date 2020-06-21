@@ -9,8 +9,6 @@
   "docs:gen": "generate doc markdown template file for this branch",
   "docs:render": "render doc markdown file for this branch (from template file)",
   "npm:audit": "audit NPM dependencies of all packages for critical vulnerabilities",
-  "start": "serve all packages locally",
-  "start:build": "rebuild and serve all packages locally",
   "serve": "serve React app package locally",
   "api:serve": "serve API package locally",
   "branches": "print all local special branches",
