@@ -2,6 +2,9 @@ const cq = require('@fullstackio/remark-cq')
 const unified = require('unified')
 const reParse = require('remark-parse')
 const remarkStringify = require('remark-stringify')
+const fs = require('fs')
+const path = require('path')
+const Bluebird = require('bluebird')
 
 // ------------------------------------
 // render
@@ -13,10 +16,6 @@ const renderMarkdown = (text, config) =>
     .use(remarkStringify)
     .use(cq, config)
     .process(text)
-
-const fs = require('fs')
-const path = require('path')
-const Bluebird = require('bluebird')
 
 const readFile = Bluebird.promisify(fs.readFile)
 

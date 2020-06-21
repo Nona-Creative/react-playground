@@ -28,9 +28,7 @@
     "_git:check": "bash scripts/git.sh exit-if-changes",
     "_git:pre-commit": "npm-run-all docs:render _git:check lint:js ci:validate",
     "_git:pre-push": "npm-run-all docs:render _git:check lint:js _ci:test ci:validate",
-    "docs:gen": "bash scripts/docs.sh generate",
-    "docs:render": "bash scripts/docs.sh render",
-    "help": "package-json-help.js",
+    "help": "node package-json-help.js",
     "init": "cp -n .env.tpl .env || true"
   },
   "dependencies": {
@@ -51,7 +49,6 @@
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
-    "@fullstackio/remark-cq": "^6.1.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -67,14 +64,7 @@
     "jest": "^24.9.0",
     "npm-run-all": "^4.1.5",
     "package-json-help": "0.0.10",
-    "rehype-stringify": "^7.0.0",
-    "remark": "^12.0.0",
-    "remark-parse": "^8.0.2",
-    "remark-rehype": "^6.0.0",
-    "remark-stringify": "^8.0.0",
-    "shelljs": "^0.8.4",
-    "sinon": "^9.0.2",
-    "unified": "^9.0.0"
+    "sinon": "^9.0.2"
   },
   "husky": {
     "hooks": {
