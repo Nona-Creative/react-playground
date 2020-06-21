@@ -9,9 +9,9 @@ import {
 export const getCounters = axios => () => (
   Bluebird
     .resolve(axios.get(`${API_URL}${API_ENDPOINT_COUNTERS}`))
-    .then((response) => prop('data', response))
-    .catch(() => {
+    .then(prop('data'))
+    .catch(() => (
       // TODO: add error logging
-      return Bluebird.reject(new Error('API Error: could not retrieve counters'))
-    })
+      Bluebird.reject(new Error('API Error: could not retrieve counters'))
+    ))
 )

@@ -13,7 +13,7 @@ import {
 // ... on App initialization
 //---------------------------------
 
-export const countersInitFlow = ({ APP_INIT }) => ({ dispatch }) => next => action => {
+export const countersInitFlow = ({ APP_INIT }) => ({ dispatch }) => next => (action) => {
   next(action)
 
   const { type } = action
@@ -29,17 +29,17 @@ export const countersInitFlow = ({ APP_INIT }) => ({ dispatch }) => next => acti
 // ... or fails with the received error message
 //---------------------------------
 
-export const apiGetCountersFlow = ({ API }) => ({ dispatch }) => next => action => {
+export const apiGetCountersFlow = ({ API }) => ({ dispatch }) => next => (action) => {
   next(action)
 
   const { type } = action
   if (type === API_GET_COUNTERS) {
     API
       .getCounters()
-      .then(response => {
+      .then((response) => {
         dispatch(apiGetCountersSuccess(response))
       })
-      .catch(e => {
+      .catch((e) => {
         dispatch(apiGetCountersFailure(e.message))
       })
   }
@@ -51,7 +51,7 @@ export const apiGetCountersFlow = ({ API }) => ({ dispatch }) => next => action 
 // ... with list of counters returned from API
 //---------------------------------
 
-export const setCountersFlow = ({ dispatch }) => next => action => {
+export const setCountersFlow = ({ dispatch }) => next => (action) => {
   next(action)
 
   const { type, payload } = action
