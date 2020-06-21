@@ -37,52 +37,41 @@ step_run_node_env_info: &step_run_node_env_info
 step_run_update_npm: &step_run_update_npm
   name: 'Update NPM To The most recent release'
   shell: /bin/bash
-  command: |
-    sudo npm install -g npm@next
+  command: sudo npm install -g npm@next
 
-step_run_install_npm_dependencies: &step_run_install_npm_dependencies
-  name: 'Install NPM Dependencies'
+step_run_init: &step_run_init
+  name: 'Initialize'
   shell: /bin/bash
-  command: |
-    npm install
+  command: npm run init
 
-step_lint_js: &step_lint_js
-  name: 'Lint JS'
-  command: |
-    npm run lint:js
+step_lint: &step_lint
+  name: 'Lint'
+  command: npm run lint
 
 step_npm_audit: &step_npm_audit
   name: 'Audit NPM Dependencies'
-  command: |
-    npm run npm:audit
-
-step_test_coverage: &step_test_coverage
-  name: 'Tests Coverage'
-  command: |
-    npm run test:coverage
+  command: npm run npm:audit
 
 step_test: &step_test
   name: 'Tests'
-  command: |
-    npm run test
+  command: npm run test
 
 # --------------------------------
 # jobs
 # --------------------------------
 
 jobs:
-  pull-request-job:
+  push-job:
     <<: *base_node
     steps:
       - checkout
       - run: *step_run_update_npm
       - restore_cache: *step_cache_restore_npm
       - run: *step_run_node_env_info
-      - run: *step_run_install_npm_dependencies
+      - run: *step_run_init
       - save_cache: *step_cache_save_npm
       - run: *step_npm_audit
-      - run: *step_lint_js
-      - run: *step_test_coverage
+      - run: *step_lint
       - run: *step_test
 
 # --------------------------------
@@ -93,4 +82,4 @@ workflows:
   version: 2
   build:
     jobs:
-      - pull-request-job
+      - push-job
