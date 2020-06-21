@@ -44,7 +44,8 @@ npm run test:watch
 Monorepo
 ---
 
-[Why is this Playground a Monorepo?](docs/common/monorepo-why.md)
+ - [Why is this Playground a Monorepo?](docs/common/monorepo-why.md)
+ - [How to use this Monorepo?](docs/common/monorepo-how.md)
 
 
 Additional Docs
