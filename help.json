@@ -12,6 +12,6 @@
   "serve": "serve React app package locally",
   "api:serve": "serve API package locally",
   "branches:ls": "print all local special branches",
-  "branches:fetch": "fetch all remote special branches",
+  "branches:checkout": "fetch all remote special branches",
   "ci:validate": "validate CircleCI config"
 }
