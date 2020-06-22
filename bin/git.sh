@@ -27,6 +27,7 @@ function checkout-remote-special() {
 }
 
 function checkout-special() {
+  git fetch
   local BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
   checkout-remote-special "iso__"
   checkout-remote-special "int__"
