@@ -30,7 +30,6 @@
     "help": "npx package-json-help.js",
     "init": "npm i && npm run _init:envs && npm run bootstrap && npm run _init:packages"
   },
-  "dependencies": {},
   "devDependencies": {
     "@fullstackio/remark-cq": "^6.1.2",
     "audit-ci": "^3.0.1",
@@ -49,6 +48,7 @@
     "remark-stringify": "^8.0.0",
     "unified": "^9.0.0"
   },
+  "dependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "npm run _git:pre-commit",

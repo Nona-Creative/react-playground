@@ -1,3 +1,12 @@
+# Redux :: Middleware
+
+## Code
+
+###### Store
+
+src/common/redux/store.js
+
+```javascript
 import { applyMiddleware, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
@@ -10,3 +19,5 @@ export default createStore(
     applyMiddleware(...middleware),
   ),
 )
+```
+
