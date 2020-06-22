@@ -46,7 +46,7 @@ describe('modules/Counter/CounterList/CounterList.component', () => {
         <Router>
           <CounterStats
             counters={counters}
-            viewCounter={'1'}
+            viewCounter='1'
           />
         </Router>
       ))
