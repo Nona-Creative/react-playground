@@ -1,5 +1,5 @@
 # npm run help
-PACKAGE_JSON_HELP_PADDING=15
+PACKAGE_JSON_HELP_PADDING=20
 
 # playground : git-compose
 ROOT_BRANCH=iso__base
