@@ -1,4 +1,5 @@
 import React from 'react'
+import { MemoryRouter as Router } from 'react-router-dom'
 import { render } from '@testing-library/react'
 import sinon from 'sinon'
 import { Provider } from 'react-redux'
@@ -28,7 +29,9 @@ describe('modules/App/App.component', () => {
       }
       render((
         <Provider store={storeStub}>
-          <App />
+          <Router>
+            <App />
+          </Router>
         </Provider>
       ))
     })

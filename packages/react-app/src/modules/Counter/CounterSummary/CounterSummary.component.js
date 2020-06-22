@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { isNil } from 'ramda'
+import { Link } from 'react-router-dom'
 
 import './CounterSummary.css'
 
@@ -18,7 +19,9 @@ const CounterSummary = ({ onSelect, id, label }) => {
       tabIndex={-1}
       onClick={() => onSelect(id)}
       onKeyDown={() => onSelect(id)}
-    >{label}</li>
+    >{label} :: 
+      <Link to={`/stats/${id}`}>View Count</Link>
+    </li>
   )
   /* eslint-enable jsx-a11y/no-noninteractive-element-to-interactive-role */
 
