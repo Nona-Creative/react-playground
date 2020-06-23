@@ -1,15 +1,15 @@
 import { connect } from 'react-redux'
-import { prop, path } from 'ramda'
+import { path } from 'ramda'
 
 import Component from './CounterDetail.component'
 import { incrementCounter, decrementCounter } from '../counters.reducer'
 
-const mapStateToProps = (state) => {
-  const selectedCounter = prop('selectedCounter', state)
+const mapStateToProps = (state, ownProps) => {
+  const selectedCounter = path(['match', 'params', 'selectedCounter'], ownProps)
   const count = path(['counters', selectedCounter, 'count'], state)
   const label = path(['counters', selectedCounter, 'label'], state)
   return {
-    counterId: selectedCounter,
+    counterId: parseInt(selectedCounter, 10),
     count,
     label,
   }
