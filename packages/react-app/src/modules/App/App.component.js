@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import './App.css'
 import { CounterList, CounterDetail } from '../Counter'
@@ -19,17 +20,23 @@ const Component = () => (
       REACT Playground
     </header>
     <main className="App__main">
-      <CounterList
-        onSelectCounter={onSelectCounter}
-        counters={counters}
-      />
-      <CounterDetail
-        onIncrement={onIncrement}
-        onDecrement={onDecrement}
-        counterId={2}
-        count={10}
-        label="COUNTER 2"
-      />
+      <Router>
+        <Route exact path="/">
+          <CounterList
+            onSelectCounter={onSelectCounter}
+            counters={counters}
+          />
+        </Route>
+        <Route path="/counter">
+          <CounterDetail
+            onIncrement={onIncrement}
+            onDecrement={onDecrement}
+            counterId={2}
+            count={10}
+            label="COUNTER 2"
+          />
+        </Route>
+      </Router>
     </main>
   </div>
 )

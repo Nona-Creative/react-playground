@@ -1,4 +1,5 @@
 import React from 'react'
+import { MemoryRouter as Router } from 'react-router-dom'
 import { render, fireEvent } from '@testing-library/react'
 import sinon from 'sinon'
 
@@ -20,12 +21,14 @@ describe('modules/Counter/CounterDetail/CounterDetail.component', () => {
       const onIncrementStub = sandbox.stub()
       const onDecrementStub = sandbox.stub()
       render((
-        <Counter
-          onIncrement={onIncrementStub}
-          onDecrement={onDecrementStub}
-          counterId={333}
-          count={2}
-        />
+        <Router>
+          <Counter
+            onIncrement={onIncrementStub}
+            onDecrement={onDecrementStub}
+            counterId={333}
+            count={2}
+          />
+        </Router>
       ))
       // TODO: test count and buttons are rendered
     })
@@ -34,10 +37,12 @@ describe('modules/Counter/CounterDetail/CounterDetail.component', () => {
       const onIncrementStub = sandbox.stub()
       const onDecrementStub = sandbox.stub()
       render((
-        <Counter
-          onIncrement={onIncrementStub}
-          onDecrement={onDecrementStub}
-        />
+        <Router>
+          <Counter
+            onIncrement={onIncrementStub}
+            onDecrement={onDecrementStub}
+          />
+        </Router>
       ))
       // TODO: test "no selected counter" view is rendered
     })
@@ -48,12 +53,14 @@ describe('modules/Counter/CounterDetail/CounterDetail.component', () => {
       const onIncrementStub = sandbox.stub()
       const onDecrementStub = sandbox.stub()
       const { getByTestId } = render(
-        <Counter
-          onIncrement={onIncrementStub}
-          onDecrement={onDecrementStub}
-          counterId={333}
-          count={2}
-        />,
+        <Router>
+          <Counter
+            onIncrement={onIncrementStub}
+            onDecrement={onDecrementStub}
+            counterId={333}
+            count={2}
+          />
+        </Router>,
       )
 
       // when ... we click the increment button

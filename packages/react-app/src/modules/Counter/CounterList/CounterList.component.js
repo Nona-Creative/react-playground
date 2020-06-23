@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { map, isEmpty } from 'ramda'
+import { Link } from 'react-router-dom'
 
 import './CounterList.css'
 import CounterSummary from '../CounterSummary/CounterSummary.component'
@@ -30,6 +31,7 @@ const CounterList = ({ onSelectCounter, counters }) => {
       </header>
       <main className="CounterList__main">
         {isEmpty(counters) ? emptyView : populatedView}
+        <Link to="/counter">To Counter</Link>
       </main>
     </div>
   )
