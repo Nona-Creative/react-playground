@@ -31,8 +31,10 @@ const CounterList = ({ onSelectCounter, counters }) => {
       </header>
       <main className="CounterList__main">
         {isEmpty(counters) ? emptyView : populatedView}
-        <Link to="/counter">To Counter</Link>
       </main>
+      <footer>
+        <Link to="/counter">To Counter</Link>
+      </footer>
     </div>
   )
 }
