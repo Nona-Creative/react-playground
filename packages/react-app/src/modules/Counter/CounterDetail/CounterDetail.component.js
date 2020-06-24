@@ -4,7 +4,7 @@ import { isNil, or } from 'ramda'
 
 import './CounterDetail.css'
 
-const Component = ({ onIncrement, onDecrement, counterId, count, label }) => {
+const Component = ({ onIncrement, onDecrement, counterId, count, label, onNavigateToOverview }) => {
   const noSelectedCounterView = (
     <div>...</div>
   )
@@ -35,6 +35,12 @@ const Component = ({ onIncrement, onDecrement, counterId, count, label }) => {
       <main className="CounterDetail__main">
         {or(isNil(counterId), isNil(count)) ? noSelectedCounterView : selectedCounterView}
       </main>
+      <footer>
+        <button
+          onClick={onNavigateToOverview}
+          type="button"
+        >Overview</button>
+      </footer>
     </div>
   )
 }
@@ -42,6 +48,7 @@ const Component = ({ onIncrement, onDecrement, counterId, count, label }) => {
 Component.propTypes = {
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired,
+  onNavigateToOverview: PropTypes.func.isRequired,
   counterId: PropTypes.number,
   count: PropTypes.number,
   label: PropTypes.string,
