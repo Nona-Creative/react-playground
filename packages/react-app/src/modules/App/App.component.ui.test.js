@@ -18,7 +18,8 @@ describe('modules/App/App.component', () => {
 
   describe('render', () => {
     it('should render successfully', () => {
-      const subscribeStub = sandbox.stub()
+      const unsubscribeStub = sandbox.stub()
+      const subscribeStub = sandbox.stub().returns(unsubscribeStub)
       const dispatchStub = sandbox.stub()
       const getStateStub = sandbox.stub().returns({})
       const storeStub = {

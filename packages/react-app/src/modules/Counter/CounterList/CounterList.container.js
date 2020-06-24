@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { pipe, pick, evolve } from 'ramda'
 
 import { denormalize } from '../../../common/utils/data'
-import { selectCounter } from '../selectedCounter.reducer'
+import { selectCounter } from '../selectCounter.reducer'
 import Component from './CounterList.component'
 
 const mapStateToProps = pipe(
