@@ -2,10 +2,10 @@ import { push } from 'connected-react-router'
 
 import {
   selectCounterFlow,
-  navigateToOverviewFlow,
+  navigateToCountersFlow,
 } from '../../modules/Counter/counter.middleware'
 
 export default [
-  navigateToOverviewFlow(push),
+  navigateToCountersFlow(push),
   selectCounterFlow(push),
 ]

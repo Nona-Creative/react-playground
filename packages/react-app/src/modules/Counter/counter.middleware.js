@@ -1,7 +1,7 @@
 import { prop } from 'ramda'
 
 import {
-  NAVIGATE_TO_OVERVIEW,
+  NAVIGATE_TO_COUNTERS,
   SELECT_COUNTER,
 } from './counters.reducer'
 
@@ -23,16 +23,16 @@ export const selectCounterFlow = push => ({ dispatch }) => next => (action) => {
 }
 
 //---------------------------------
-// to overview
+// to counters
 // ... signals intention to visit the counters overview
 //---------------------------------
 
-export const navigateToOverviewFlow = push => ({ dispatch }) => next => (action) => {
+export const navigateToCountersFlow = navigate => ({ dispatch }) => next => (action) => {
   next(action)
 
   const { type } = action
-  if (type === NAVIGATE_TO_OVERVIEW) {
+  if (type === NAVIGATE_TO_COUNTERS) {
     const newUrl = '/'
-    dispatch(push(newUrl))
+    dispatch(navigate(newUrl))
   }
 }

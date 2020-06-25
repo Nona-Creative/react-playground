@@ -2,7 +2,7 @@ import sinon from 'sinon'
 
 import {
   selectCounter,
-  navigateToOverview,
+  navigateToCounters,
 } from './counters.reducer'
 import * as SUT from './counter.middleware'
 
@@ -35,7 +35,7 @@ describe('modules/Counter/selectCounter.middleware', () => {
     })
   })
 
-  describe('navigateToOverviewFlow', () => {
+  describe('navigateToCountersFlow', () => {
     it('should navigate back to the counter overview', () => {
       const dispatchStub = sandbox.stub()
       const store = { dispatch: dispatchStub }
@@ -43,8 +43,8 @@ describe('modules/Counter/selectCounter.middleware', () => {
       const pushStub = sandbox.stub()
 
       // when ... a counter gets selected
-      const action = navigateToOverview()
-      const middleware = SUT.navigateToOverviewFlow(pushStub)
+      const action = navigateToCounters()
+      const middleware = SUT.navigateToCountersFlow(pushStub)
       middleware(store)(nextStub)(action)
 
       // then ... should push a new url
