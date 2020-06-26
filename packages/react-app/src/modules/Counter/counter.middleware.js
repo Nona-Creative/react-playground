@@ -1,30 +1,27 @@
-import { prop } from 'ramda'
+import { prop, includes, path } from 'ramda'
 
+import { getCounterIdFromPayload } from './counter.utils'
 import {
-  NAVIGATE_TO_COUNTERS,
-  SELECT_COUNTER,
+  NAVIGATE_TO_COUNTERS, NAVIGATE_TO_SELECTED_COUNTER, selectCounter,
 } from './counters.reducer'
 
 //---------------------------------
-// counters select
-// ... signals intention to select a counter
-// ... with a counter id
+// navigate to single counter
 //---------------------------------
 
-export const selectCounterFlow = push => ({ dispatch }) => next => (action) => {
+export const navigateToCounterFlow = navigate => ({ dispatch }) => next => (action) => {
   next(action)
 
   const { type, payload } = action
-  if (type === SELECT_COUNTER) {
+  if (type === NAVIGATE_TO_SELECTED_COUNTER ) {
     const id = prop('id', payload)
     const newUrl = `/counter/${id}`
-    dispatch(push(newUrl))
+    dispatch(navigate(newUrl))
   }
 }
 
 //---------------------------------
-// to counters
-// ... signals intention to visit the counters overview
+// navigate to counters
 //---------------------------------
 
 export const navigateToCountersFlow = navigate => ({ dispatch }) => next => (action) => {
@@ -34,5 +31,19 @@ export const navigateToCountersFlow = navigate => ({ dispatch }) => next => (act
   if (type === NAVIGATE_TO_COUNTERS) {
     const newUrl = '/'
     dispatch(navigate(newUrl))
+  }
+}
+
+//---------------------------------
+// select counter from url
+//---------------------------------
+
+export const selectCounterFlow = ({ dispatch }) => next => (action) => {
+  next(action)
+
+  const { type, payload } = action
+  if (type === '@@router/LOCATION_CHANGE' && includes('/counter/', path(['location', 'pathname'], payload))) {
+    const counterId = getCounterIdFromPayload(payload)
+    dispatch(selectCounter(counterId))
   }
 }

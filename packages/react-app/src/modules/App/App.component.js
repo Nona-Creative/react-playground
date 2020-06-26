@@ -2,7 +2,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import { ConnectedRouter as Router} from 'connected-react-router'
 
-import { history } from '../../common/redux/store'
+import history from '../../common/redux/history'
 import './App.css'
 import { CounterList, CounterDetail } from '../Counter'
 
