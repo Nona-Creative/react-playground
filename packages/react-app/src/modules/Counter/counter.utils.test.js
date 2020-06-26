@@ -14,7 +14,6 @@ describe('modules/Counter/counters.utils', () => {
       }
 
       const result = SUT.getCounterIdFromPayload(payload)
-      console.log(result)
       expect(result).toEqual('COUNTERID')
     })
   })
