@@ -27,8 +27,8 @@ describe('modules/Counter/selectCounter.middleware', () => {
       // when ... a counter gets selected
       const payload = {
         location: {
-          pathname: '/counter/1'
-        }
+          pathname: '/counter/1',
+        },
       }
       const action = {
         type: '@@router/LOCATION_CHANGE',
