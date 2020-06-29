@@ -1,4 +1,5 @@
 import React from 'react'
+import { MemoryRouter as Router } from 'react-router-dom'
 import { render, fireEvent } from '@testing-library/react'
 import sinon from 'sinon'
 
@@ -24,10 +25,12 @@ describe('modules/Counter/CounterList/CounterList.component', () => {
         { id: '3', label: 'COUNTER 3', count: 15 },
       ]
       const { getAllByRole } = render((
-        <CounterList
-          onSelectCounter={onSelectCounterStub}
-          counters={counters}
-        />
+        <Router>
+          <CounterList
+            onSelectCounter={onSelectCounterStub}
+            counters={counters}
+          />
+        </Router>
       ))
       const listItems = getAllByRole('listbox')
       expect(listItems).toHaveLength(3)
@@ -37,9 +40,11 @@ describe('modules/Counter/CounterList/CounterList.component', () => {
     it('should render successfully with no optional props', () => {
       const onSelectCounterStub = sandbox.stub()
       render((
-        <CounterList
-          onSelectCounter={onSelectCounterStub}
-        />
+        <Router>
+          <CounterList
+            onSelectCounter={onSelectCounterStub}
+          />
+        </Router>
       ))
       // TODO: test empty view is correctly rendered
     })
@@ -53,10 +58,12 @@ describe('modules/Counter/CounterList/CounterList.component', () => {
         { id: '2', label: 'COUNTER 2' },
       ]
       const { getAllByRole } = render((
-        <CounterList
-          onSelectCounter={onSelectCounterStub}
-          counters={counters}
-        />
+        <Router>
+          <CounterList
+            onSelectCounter={onSelectCounterStub}
+            counters={counters}
+          />
+        </Router>
       ))
       const listItems = getAllByRole('listbox')
       expect(listItems).toHaveLength(2)

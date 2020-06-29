@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { isNil, or } from 'ramda'
+import { Link } from 'react-router-dom'
 
 import './CounterDetail.css'
 
@@ -35,6 +36,9 @@ const Component = ({ onIncrement, onDecrement, counterId, count, label }) => {
       <main className="CounterDetail__main">
         {or(isNil(counterId), isNil(count)) ? noSelectedCounterView : selectedCounterView}
       </main>
+      <footer>
+        <Link to="/">Back</Link>
+      </footer>
     </div>
   )
 }
