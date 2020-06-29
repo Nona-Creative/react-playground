@@ -55,7 +55,7 @@ describe('modules/Counter/selectCounter.middleware', () => {
   })
 
   describe('setSelectedCounterFlow', () => {
-    it('should set selected counter', () => {
+    it('should set selected counter on initial page load', () => {
       const dispatchStub = sandbox.stub()
       const store = { dispatch: dispatchStub }
       const nextStub = sandbox.stub()
@@ -65,6 +65,7 @@ describe('modules/Counter/selectCounter.middleware', () => {
         location: {
           pathname: '/counter/1',
         },
+        isFirstRendering: true,
       }
       const LOCATION_CHANGE = '@@router/LOCATION_CHANGE'
       const action = {
@@ -77,6 +78,56 @@ describe('modules/Counter/selectCounter.middleware', () => {
       // then ... should push a new url
       sinon.assert.calledWithExactly(nextStub, action)
       sinon.assert.calledWithExactly(dispatchStub, setSelectedCounter('1'))
+    })
+
+    it('should not set selected counter on subsequent page load', () => {
+      const dispatchStub = sandbox.stub()
+      const store = { dispatch: dispatchStub }
+      const nextStub = sandbox.stub()
+
+      // when ... a counter page is loaded
+      const payload = {
+        location: {
+          pathname: '/counter/1',
+        },
+        isFirstRendering: false,
+      }
+      const LOCATION_CHANGE = '@@router/LOCATION_CHANGE'
+      const action = {
+        type: LOCATION_CHANGE,
+        payload,
+      }
+      const middleware = SUT.setSelectedCounterFlow({ LOCATION_CHANGE })
+      middleware(store)(nextStub)(action)
+
+      // then ... should push a new url
+      sinon.assert.calledWithExactly(nextStub, action)
+      sinon.assert.notCalled(dispatchStub)
+    })
+
+    it('should not set selected counter on when not a single counter page', () => {
+      const dispatchStub = sandbox.stub()
+      const store = { dispatch: dispatchStub }
+      const nextStub = sandbox.stub()
+
+      // when ... a counter gets selected
+      const payload = {
+        location: {
+          pathname: '/NOTcounter/1',
+        },
+        isFirstRendering: false,
+      }
+      const LOCATION_CHANGE = '@@router/LOCATION_CHANGE'
+      const action = {
+        type: LOCATION_CHANGE,
+        payload,
+      }
+      const middleware = SUT.setSelectedCounterFlow({ LOCATION_CHANGE })
+      middleware(store)(nextStub)(action)
+
+      // then ... should push a new url
+      sinon.assert.calledWithExactly(nextStub, action)
+      sinon.assert.notCalled(dispatchStub)
     })
   })
 })

@@ -1,10 +1,11 @@
-import { prop } from 'ramda'
+import { prop, path, includes } from 'ramda'
 
-import { getCounterIdFromPayload } from './counter.utils'
+import { getLastParamFromRouterState } from '../../common/redux/router.utils'
 import {
   NAVIGATE_TO_COUNTERS,
   SELECT_COUNTER,
 } from './counters.reducer'
+
 import { setSelectedCounter } from './selectedCounter.reducer'
 
 //---------------------------------
@@ -30,6 +31,7 @@ export const selectCounterFlow = navigate => ({ dispatch }) => next => (action) 
   const { type, payload } = action
   if (type === SELECT_COUNTER) {
     const id = prop('id', payload)
+    dispatch(setSelectedCounter(id))
     dispatch(navigate(`/counter/${id}`))
   }
 }
@@ -42,8 +44,13 @@ export const setSelectedCounterFlow = ({ LOCATION_CHANGE }) => ({ dispatch }) =>
   next(action)
 
   const { type, payload } = action
-  if (type === LOCATION_CHANGE) {
-    const id = getCounterIdFromPayload(payload)
+
+  if (
+    type === LOCATION_CHANGE &&
+    prop('isFirstRendering', payload) && 
+    includes('/counter/', path(['location', 'pathname'], payload))
+  ) {
+    const id = getLastParamFromRouterState(payload)
     dispatch(setSelectedCounter(id))
   }
 }

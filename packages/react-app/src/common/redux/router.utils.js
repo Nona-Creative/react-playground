@@ -1,6 +1,6 @@
 import { path, pipe, last, split } from 'ramda'
 
-export const getCounterIdFromPayload = pipe(
+export const getLastParamFromRouterState = pipe(
   path(['location', 'pathname']),
   split('/'),
   last,
