@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
-import { prop, path } from 'ramda'
+import { path, prop } from 'ramda'
 
 import Component from './CounterDetail.component'
-import { incrementCounter, decrementCounter } from '../counters.reducer'
+import { incrementCounter, decrementCounter, navigateToCounters } from '../counters.reducer'
 
 const mapStateToProps = (state) => {
   const selectedCounter = prop('selectedCounter', state)
@@ -18,6 +18,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
   onIncrement: (counterId, amount) => dispatch(incrementCounter(counterId, amount)),
   onDecrement: (counterId, amount) => dispatch(decrementCounter(counterId, amount)),
+  onBack: () => dispatch(navigateToCounters()),
 })
 
 export default connect(
