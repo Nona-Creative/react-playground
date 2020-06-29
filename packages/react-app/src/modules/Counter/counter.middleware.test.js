@@ -44,13 +44,15 @@ describe('modules/Counter/selectCounter.middleware', () => {
       const navigateStub = sandbox.stub()
 
       // when ... we selecte a counter
-      const action = selectCounter('1')
+      const id = '1'
+      const action = selectCounter(id)
       const middleware = SUT.selectCounterFlow(navigateStub)
       middleware(store)(nextStub)(action)
 
       // then ... should push a new url
       sinon.assert.calledWithExactly(nextStub, action)
-      sinon.assert.calledWithExactly(dispatchStub, navigateStub('/counter/1'))
+      sinon.assert.calledWithExactly(dispatchStub, navigateStub(`/counter/${id}`))
+      sinon.assert.calledWithExactly(dispatchStub, setSelectedCounter(id))
     })
   })
 
