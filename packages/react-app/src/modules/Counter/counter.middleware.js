@@ -38,11 +38,11 @@ export const navigateToCountersFlow = navigate => ({ dispatch }) => next => (act
 // select counter from url
 //---------------------------------
 
-export const selectCounterFlow = ({ dispatch }) => next => (action) => {
+export const selectCounterFlow = ({ LOCATION_CHANGE }) => ({ dispatch }) => next => (action) => {
   next(action)
 
   const { type, payload } = action
-  if (type === '@@router/LOCATION_CHANGE' && includes('/counter/', path(['location', 'pathname'], payload))) {
+  if (type === LOCATION_CHANGE && includes('/counter/', path(['location', 'pathname'], payload))) {
     const counterId = getCounterIdFromPayload(payload)
     dispatch(selectCounter(counterId))
   }

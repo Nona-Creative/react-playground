@@ -30,11 +30,12 @@ describe('modules/Counter/selectCounter.middleware', () => {
           pathname: '/counter/1',
         },
       }
+      const LOCATION_CHANGE = '@@router/LOCATION_CHANGE'
       const action = {
-        type: '@@router/LOCATION_CHANGE',
+        type: LOCATION_CHANGE,
         payload,
       }
-      const middleware = SUT.selectCounterFlow
+      const middleware = SUT.selectCounterFlow({ LOCATION_CHANGE })
       middleware(store)(nextStub)(action)
 
       // then ... should push a new url
