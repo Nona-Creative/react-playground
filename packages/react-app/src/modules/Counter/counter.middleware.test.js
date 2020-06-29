@@ -3,8 +3,8 @@ import sinon from 'sinon'
 import {
   selectCounter,
   navigateToCounters,
-  navigateToSelectedCounter,
 } from './counters.reducer'
+import { setSelectedCounter } from './selectedCounter.reducer'
 import * as SUT from './counter.middleware'
 
 describe('modules/Counter/selectCounter.middleware', () => {
@@ -18,8 +18,44 @@ describe('modules/Counter/selectCounter.middleware', () => {
     await sandbox.restore()
   })
 
-  describe('selectCounterFlow', () => {
-    it('should select a counter from url', () => {
+  describe('navigateToCountersFlow', () => {
+    it('should navigate back to the counter overview', () => {
+      const dispatchStub = sandbox.stub()
+      const store = { dispatch: dispatchStub }
+      const nextStub = sandbox.stub()
+      const navigateStub = sandbox.stub()
+
+      // when ... a counter gets selected
+      const action = navigateToCounters()
+      const middleware = SUT.navigateToCountersFlow(navigateStub)
+      middleware(store)(nextStub)(action)
+
+      // then ... should push a new url
+      sinon.assert.calledWithExactly(nextStub, action)
+      sinon.assert.calledWithExactly(dispatchStub, navigateStub('/'))
+    })
+  })
+
+  describe('selectedCounterFlow', () => {
+    it('should select a counter', () => {
+      const dispatchStub = sandbox.stub()
+      const store = { dispatch: dispatchStub }
+      const nextStub = sandbox.stub()
+      const navigateStub = sandbox.stub()
+
+      // when ... we selecte a counter
+      const action = selectCounter('1')
+      const middleware = SUT.selectCounterFlow(navigateStub)
+      middleware(store)(nextStub)(action)
+
+      // then ... should push a new url
+      sinon.assert.calledWithExactly(nextStub, action)
+      sinon.assert.calledWithExactly(dispatchStub, navigateStub('/counter/1'))
+    })
+  })
+
+  describe('setSelectedCounterFlow', () => {
+    it('should set selected counter', () => {
       const dispatchStub = sandbox.stub()
       const store = { dispatch: dispatchStub }
       const nextStub = sandbox.stub()
@@ -35,48 +71,12 @@ describe('modules/Counter/selectCounter.middleware', () => {
         type: LOCATION_CHANGE,
         payload,
       }
-      const middleware = SUT.selectCounterFlow({ LOCATION_CHANGE })
+      const middleware = SUT.setSelectedCounterFlow({ LOCATION_CHANGE })
       middleware(store)(nextStub)(action)
 
       // then ... should push a new url
       sinon.assert.calledWithExactly(nextStub, action)
-      sinon.assert.calledWithExactly(dispatchStub, selectCounter('1'))
-    })
-  })
-  
-  describe('navigateToCounterFlow', () => {
-    it('should navigate to selected counter', () => {
-      const dispatchStub = sandbox.stub()
-      const store = { dispatch: dispatchStub }
-      const nextStub = sandbox.stub()
-      const pushStub = sandbox.stub()
-
-      // when ... a counter gets selected
-      const action = navigateToSelectedCounter('1')
-      const middleware = SUT.navigateToCounterFlow(pushStub)
-      middleware(store)(nextStub)(action)
-
-      // then ... should push a new url
-      sinon.assert.calledWithExactly(nextStub, action)
-      sinon.assert.calledWithExactly(dispatchStub, pushStub('/counter/1'))
-    })
-  })
-
-  describe('navigateToCountersFlow', () => {
-    it('should navigate back to the counter overview', () => {
-      const dispatchStub = sandbox.stub()
-      const store = { dispatch: dispatchStub }
-      const nextStub = sandbox.stub()
-      const pushStub = sandbox.stub()
-
-      // when ... a counter gets selected
-      const action = navigateToCounters()
-      const middleware = SUT.navigateToCountersFlow(pushStub)
-      middleware(store)(nextStub)(action)
-
-      // then ... should push a new url
-      sinon.assert.calledWithExactly(nextStub, action)
-      sinon.assert.calledWithExactly(dispatchStub, pushStub('/'))
+      sinon.assert.calledWithExactly(dispatchStub, setSelectedCounter('1'))
     })
   })
 })

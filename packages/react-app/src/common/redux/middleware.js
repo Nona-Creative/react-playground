@@ -3,12 +3,12 @@ import { LOCATION_CHANGE } from 'connected-react-router/lib/actions'
 
 import {
   selectCounterFlow,
-  navigateToCounterFlow,
   navigateToCountersFlow,
+  setSelectedCounterFlow,
 } from '../../modules/Counter/counter.middleware'
 
 export default [
-  selectCounterFlow({ LOCATION_CHANGE }),
+  selectCounterFlow(push),
   navigateToCountersFlow(push),
-  navigateToCounterFlow(push),
+  setSelectedCounterFlow({ LOCATION_CHANGE }),
 ]

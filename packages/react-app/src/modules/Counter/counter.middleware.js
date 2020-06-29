@@ -1,24 +1,11 @@
-import { prop, includes, path } from 'ramda'
+import { prop } from 'ramda'
 
 import { getCounterIdFromPayload } from './counter.utils'
 import {
-  NAVIGATE_TO_COUNTERS, NAVIGATE_TO_SELECTED_COUNTER, selectCounter,
+  NAVIGATE_TO_COUNTERS,
+  SELECT_COUNTER,
 } from './counters.reducer'
-
-//---------------------------------
-// navigate to single counter
-//---------------------------------
-
-export const navigateToCounterFlow = navigate => ({ dispatch }) => next => (action) => {
-  next(action)
-
-  const { type, payload } = action
-  if (type === NAVIGATE_TO_SELECTED_COUNTER ) {
-    const id = prop('id', payload)
-    const newUrl = `/counter/${id}`
-    dispatch(navigate(newUrl))
-  }
-}
+import { setSelectedCounter } from './selectedCounter.reducer'
 
 //---------------------------------
 // navigate to counters
@@ -29,21 +16,34 @@ export const navigateToCountersFlow = navigate => ({ dispatch }) => next => (act
 
   const { type } = action
   if (type === NAVIGATE_TO_COUNTERS) {
-    const newUrl = '/'
-    dispatch(navigate(newUrl))
+    dispatch(navigate('/'))
   }
 }
 
 //---------------------------------
-// select counter from url
+// select counter
 //---------------------------------
 
-export const selectCounterFlow = ({ LOCATION_CHANGE }) => ({ dispatch }) => next => (action) => {
+export const selectCounterFlow = navigate => ({ dispatch }) => next => (action) => {
   next(action)
 
   const { type, payload } = action
-  if (type === LOCATION_CHANGE && includes('/counter/', path(['location', 'pathname'], payload))) {
-    const counterId = getCounterIdFromPayload(payload)
-    dispatch(selectCounter(counterId))
+  if (type === SELECT_COUNTER) {
+    const id = prop('id', payload)
+    dispatch(navigate(`/counter/${id}`))
+  }
+}
+
+//---------------------------------
+// set selected counter
+//---------------------------------
+
+export const setSelectedCounterFlow = ({ LOCATION_CHANGE }) => ({ dispatch }) => next => (action) => {
+  next(action)
+
+  const { type, payload } = action
+  if (type === LOCATION_CHANGE) {
+    const id = getCounterIdFromPayload(payload)
+    dispatch(setSelectedCounter(id))
   }
 }

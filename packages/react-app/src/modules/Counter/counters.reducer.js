@@ -14,9 +14,6 @@ export const decrementCounter = (id, amount) => ({ type: DECREMENT_COUNTER, payl
 export const SELECT_COUNTER = '[counter] select'
 export const selectCounter = id => ({ type: SELECT_COUNTER, payload: { id } })
 
-export const NAVIGATE_TO_SELECTED_COUNTER = '[counter] navigate to selected counter'
-export const navigateToSelectedCounter = id => ({ type: NAVIGATE_TO_SELECTED_COUNTER, payload: { id } })
-
 export const NAVIGATE_TO_COUNTERS = '[counter] navigate to counter list'
 export const navigateToCounters = () => ({ type: NAVIGATE_TO_COUNTERS })
 

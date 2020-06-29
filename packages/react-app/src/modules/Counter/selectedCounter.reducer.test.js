@@ -1,5 +1,5 @@
 import SUT, {
-  selectCounter,
+  setSelectedCounter,
 } from './selectedCounter.reducer'
 
 describe('modules/Counter/selectedCounter.reducer', () => {
@@ -9,7 +9,7 @@ describe('modules/Counter/selectedCounter.reducer', () => {
       const state = null
 
       // when ... we select counter 3
-      const action = selectCounter('3')
+      const action = setSelectedCounter('3')
       const result = SUT(state, action)
 
       // then ... should set selected counter to 3

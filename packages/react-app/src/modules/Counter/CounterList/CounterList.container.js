@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { pipe, pick, evolve } from 'ramda'
 
 import { denormalize } from '../../../common/utils/data'
-import { navigateToSelectedCounter } from '../counters.reducer'
+import { selectCounter } from '../counters.reducer'
 import Component from './CounterList.component'
 
 const mapStateToProps = pipe(
@@ -13,7 +13,7 @@ const mapStateToProps = pipe(
 )
 
 const mapDispatchToProps = dispatch => ({
-  onSelectCounter: id => dispatch(navigateToSelectedCounter(id)),
+  onSelectCounter: id => dispatch(selectCounter(id)),
 })
 
 export default connect(
