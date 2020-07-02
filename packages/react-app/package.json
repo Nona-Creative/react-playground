@@ -30,6 +30,9 @@
     "help": "npx package-json-help.js",
     "init": "cp -n .env.tpl .env || true"
   },
+  "engines": {
+    "npm": "=6.14.5"
+  },
   "dependencies": {
     "prop-types": "^15.7.2",
     "ramda": "^0.27.0",
