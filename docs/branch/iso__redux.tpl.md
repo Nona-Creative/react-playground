@@ -4,7 +4,7 @@ Redux
 Design
 ---
 
-### feature module structure
+### Feature module structure
 
 > Goal is a structure that allows as much decoupling between feature modules as possible
 
@@ -19,14 +19,13 @@ Design
         +-- ... redux files
 ```
 
-### redux module structure
+### Redux module structure
 
-> Goal is a structure that separates reducer, store and middleware code as much as possible
+> Goal is a structure that separates reducer and store (and middleware) code as much as possible
 
 ```text
 +-- common
     +-- redux
-        +-- middleware.js
         +-- reducers.js
         +-- store.js
 ```
