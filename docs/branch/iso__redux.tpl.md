@@ -19,6 +19,18 @@ Design
         +-- ... redux files
 ```
 
+### redux module structure
+
+> Goal is a structure that separates reducer, store and middleware code as much as possible
+
+```text
++-- common
+    +-- redux
+        +-- middleware.js
+        +-- reducers.js
+        +-- store.js
+```
+
 ### Redux state
 
 > On top of feature module goals stated above, goal is also Redux reducer filenames that correspond to the Redux state tree
