@@ -2,10 +2,11 @@ Branch Specific Docs
 ===
 
 
-``master`` branch
+"master" branch
 ---
 
-``master`` branch composes all the docs generated in all other special branches.
+the "master" branch is ``iso__base``, this repo has no ``master`` or ``develop`` branches.
+this is for clarity about what ``iso__base`` is, ie. the base branch for all ``iso`` branches
 
 
 Generate template

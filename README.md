@@ -69,10 +69,14 @@ npm run test:watch
 Additional Docs
 ---
 
- 1. [Contributing](docs/common/contributing.md)
- 2. [Branches](docs/common/branches.md)
- 3. [ENVs](docs/common/envs.md)
- 4. [Prerequisites](docs/common/prerequisites.md)
- 5. [AWS](docs/common/aws.md)
- 6. [Node Version](docs/common/node-version.md)
- 7. [Branch Specific Docs](docs/common/branches-docs.md)
+ - [AWS Config](docs/common/aws-config.md)
+ - [AWS Deployment](docs/common/aws-deployment.md)
+ - [AWS RDS](docs/common/aws-rds.md)
+ - [Branches](docs/common/branches.md)
+ - [contributing](docs/common/contributing.md)
+ - [Envs](docs/common/envs.md)
+ - [Example Requests](docs/common/example-requests.md)
+ - [Monorepo How?](docs/common/monorepo-how.md)
+ - [Monorepo Why?](docs/common/monorepo-why.md)
+ - [NodeJS Version](docs/common/node-version.md)
+ - [Prerequisites](docs/common/prerequisites.md)

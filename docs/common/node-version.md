@@ -1,4 +1,4 @@
-React Playground :: Node Version
+Node Version
 ===
 
 The Node version for this project is automatically managed by:
@@ -24,6 +24,7 @@ Once you've gone through the ``Setup`` above,
 AVN will automatically switch to version of node specified in your project's ``.node-version`` file,
 whenever you cd into the project's root or open a new terminal window in the project's root.
 
+
 NPM Version
 ---
 
@@ -37,4 +38,4 @@ Make sure the NPM version specified in engines (as above)
 matches the Node version in ``.node-version``.
 
 Use the following as a reference when checking this: 
-https://nodejs.org/en/download/releases/
+ - [nodejs releases](https://nodejs.org/en/download/releases/)

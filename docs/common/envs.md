@@ -1,4 +1,4 @@
-React Playground :: ENVs
+ENVs
 ===
 
 TODO: document ENV usage in React projects

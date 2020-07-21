@@ -1,4 +1,4 @@
-React Playground :: Why is this Playground a Monorepo?
+Why is this Playground a Monorepo?
 ===
 
 ### Isolating the React app

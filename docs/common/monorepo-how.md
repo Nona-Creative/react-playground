@@ -1,4 +1,4 @@
-React Playground :: How to use this Monorepo?
+How to use this Monorepo?
 ===
 
 ### Project initialization
